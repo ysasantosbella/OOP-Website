@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Object Oriented Programming</title>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+<div class="container">
+
+<a class="navbar-brand" href="index.html">The Guide to Object Oriented Programming</a>
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navMenu">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="index.html">Home</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link active" href="oop.html">OOP Concepts</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="quiz.html">Quiz</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="dragdrop.html">Code Builder</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="codepredict.html">Code Prediction</a>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<!-- PAGE HEADER -->
+<header class="bg-primary text-white text-center p-5">
+
+<h1>Java Object-Oriented Programming Concepts</h1>
+
+<p class="lead">
+Learn the fundamental principles of Object-Oriented Programming
+</p>
+
+</header>
+
+
+<!-- OOP CONTENT -->
+<section class="container mt-5">
+
+
+<!-- CLASS -->
+<div class="card mb-4">
+
+<div class="card-body">
+
+<h3>1. Class</h3>
+
+<p>
+A class is a blueprint or template used to create objects.
+It defines the properties (variables) and behaviors (methods) of an object.
+</p>
+
+<button class="btn btn-primary" onclick="toggleExplanation('classExample')">
+Show Example
+</button>
+
+<div id="classExample" style="display:none; margin-top:10px;">
+
+<pre>
+class Car {
+
+String brand;
+int speed;
+
+void drive(){
+System.out.println("The car is moving");
+}
+
+}
+</pre>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- OBJECT -->
+<div class="card mb-4">
+
+<div class="card-body">
+
+<h3>2. Object</h3>
+
+<p>
+An object is an instance of a class. It represents a real-world entity
+and contains properties and behaviors defined in the class.
+</p>
+
+<button class="btn btn-primary" onclick="toggleExplanation('objectExample')">
+Show Example
+</button>
+
+<div id="objectExample" style="display:none; margin-top:10px;">
+
+<pre>
+Car myCar = new Car();
+
+myCar.brand = "Toyota";
+myCar.speed = 100;
+
+myCar.drive();
+</pre>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- INHERITANCE -->
+<div class="card mb-4">
+
+<div class="card-body">
+
+<h3>3. Inheritance</h3>
+
+<p>
+Inheritance allows one class to inherit properties and methods
+from another class. This promotes code reusability.
+</p>
+
+<button class="btn btn-primary" onclick="toggleExplanation('inheritanceExample')">
+Show Example
+</button>
+
+<div id="inheritanceExample" style="display:none; margin-top:10px;">
+
+<pre>
+class Animal {
+
+void eat(){
+System.out.println("This animal eats food");
+}
+
+}
+
+class Dog extends Animal {
+
+void bark(){
+System.out.println("The dog barks");
+}
+
+}
+</pre>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ENCAPSULATION -->
+<div class="card mb-4">
+
+<div class="card-body">
+
+<h3>4. Encapsulation</h3>
+
+<p>
+Encapsulation is the process of hiding internal data
+and only allowing access through public methods.
+</p>
+
+<button class="btn btn-primary" onclick="toggleExplanation('encapsulationExample')">
+Show Example
+</button>
+
+<div id="encapsulationExample" style="display:none; margin-top:10px;">
+
+<pre>
+class Person {
+
+private int age;
+
+public void setAge(int a){
+age = a;
+}
+
+public int getAge(){
+return age;
+}
+
+}
+</pre>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white text-center p-3 mt-5">
+
+<p>Interactive OOP Learning Website</p>
+
+</footer>
+
+
+
+<!-- BOOTSTRAP JS -->
+<script src="js/bootstrap.bundle.min.js"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OOP Concepts</title>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+<div class="container">
+
+<a class="navbar-brand" href="index.html">OOP Learning</a>
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navMenu">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="index.html">Home</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link active" href="oop.html">OOP Concepts</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="quiz.html">Quiz</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="dragdrop.html">Code Builder</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="codepredict.html">Code Prediction</a>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<!-- PAGE HEADER -->
+<header class="bg-primary text-white text-center p-5">
+
+<h1>Java Object-Oriented Programming Concepts</h1>
+
+<p class="lead">
+Learn the fundamental principles of Object-Oriented Programming
+</p>
+
+</header>
+
+
+<!-- OOP CONTENT -->
+<section class="container mt-5">
+
+
+<!-- CLASS -->
+<div class="card mb-4">
+
+<div class="card-body">
+
+<h3>1. Class</h3>
+
+<p>
+A class is a blueprint or template used to create objects.
+It defines the properties (variables) and behaviors (methods) of an object.
+</p>
+
+<button class="btn btn-primary" onclick="toggleExplanation('classExample')">
+Show Example
+</button>
+
+<div id="classExample" style="display:none; margin-top:10px;">
+
+<pre>
+class Car {
+
+String brand;
+int speed;
+
+void drive(){
+System.out.println("The car is moving");
+}
+
+}
+</pre>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- OBJECT -->
+<div class="card mb-4">
+
+<div class="card-body">
+
+<h3>2. Object</h3>
+
+<p>
+An object is an instance of a class. It represents a real-world entity
+and contains properties and behaviors defined in the class.
+</p>
+
+<button class="btn btn-primary" onclick="toggleExplanation('objectExample')">
+Show Example
+</button>
+
+<div id="objectExample" style="display:none; margin-top:10px;">
+
+<pre>
+Car myCar = new Car();
+
+myCar.brand = "Toyota";
+myCar.speed = 100;
+
+myCar.drive();
+</pre>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- INHERITANCE -->
+<div class="card mb-4">
+
+<div class="card-body">
+
+<h3>3. Inheritance</h3>
+
+<p>
+Inheritance allows one class to inherit properties and methods
+from another class. This promotes code reusability.
+</p>
+
+<button class="btn btn-primary" onclick="toggleExplanation('inheritanceExample')">
+Show Example
+</button>
+
+<div id="inheritanceExample" style="display:none; margin-top:10px;">
+
+<pre>
+class Animal {
+
+void eat(){
+System.out.println("This animal eats food");
+}
+
+}
+
+class Dog extends Animal {
+
+void bark(){
+System.out.println("The dog barks");
+}
+
+}
+</pre>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ENCAPSULATION -->
+<div class="card mb-4">
+
+<div class="card-body">
+
+<h3>4. Encapsulation</h3>
+
+<p>
+Encapsulation is the process of hiding internal data
+and only allowing access through public methods.
+</p>
+
+<button class="btn btn-primary" onclick="toggleExplanation('encapsulationExample')">
+Show Example
+</button>
+
+<div id="encapsulationExample" style="display:none; margin-top:10px;">
+
+<pre>
+class Person {
+
+private int age;
+
+public void setAge(int a){
+age = a;
+}
+
+public int getAge(){
+return age;
+}
+
+}
+</pre>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white text-center p-3 mt-5">
+
+<p>Interactive OOP Learning Website</p>
+
+</footer>
+
+
+
+<!-- BOOTSTRAP JS -->
+<script src="js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>
+
+
+</body>
+</html>
