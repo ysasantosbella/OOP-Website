@@ -1,0 +1,24 @@
+/* DARK MODE STYLES */
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.card {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.navbar {
+    background-color: #000 !important;
+}
+
+.list-group-item {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+footer {
+    background-color: #000;
+}
