@@ -76,13 +76,13 @@ let activities = {
 
 function loadActivity() {
 
-    let concept = document.getElementById("conceptSelect").value;
+    let concept = document.getElementById("conceptSelect").value; // drop down menu for oop concepts selection
 
     let container = document.getElementById("code-container");
 
-    container.innerHTML = "";
+    container.innerHTML = ""; // removes old code lines when new concept is selected
 
-    activities[concept].shuffled.forEach(line => {
+    activities[concept].shuffled.forEach(line => { // for each line in the shuffled array of the selected concept, create a div and make it draggable
 
         let div = document.createElement("div");
 
@@ -96,14 +96,11 @@ function loadActivity() {
 
     });
 
-
     enableDrag();
 
 }
 
-
-
-function enableDrag() {
+function enableDrag() { // enables drag and drop functionality for the code lines
 
     let items = document.querySelectorAll(".draggable");
 
@@ -131,7 +128,7 @@ function enableDrag() {
 
 
 
-function checkOrder() {
+function checkOrder() { // triggerred when user clicks "Check Answer" button, compares the current order of code lines with the correct order for the selected concept and displays result
 
     let concept = document.getElementById("conceptSelect").value;
 
