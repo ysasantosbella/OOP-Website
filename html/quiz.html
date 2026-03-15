@@ -1,2 +1,89 @@
-<!-- add in html(head) "<link id="darkmode-style" rel="stylesheet" href="../css/darkmode.css" disabled>" -->
-<!-- add in last part of html(body) after footer "<script src="../js/darkmode.js"></script>""  -->
+<section class="container mt-5">
+
+<h2 class="text-center mb-4">OOP Practice Quiz</h2>
+
+<form id="quizForm">
+
+<div class="card mb-3">
+<div class="card-body">
+
+<h5>1. What is a class?</h5>
+
+<div class="form-check">
+<input class="form-check-input" type="radio" name="q1" value="a">
+<label class="form-check-label">Instance of an object</label>
+</div>
+
+<div class="form-check">
+<input class="form-check-input" type="radio" name="q1" value="b">
+<label class="form-check-label">Blueprint for objects</label>
+</div>
+
+<div class="form-check">
+<input class="form-check-input" type="radio" name="q1" value="c">
+<label class="form-check-label">A loop structure</label>
+</div>
+
+</div>
+</div>
+
+
+<div class="card mb-3">
+<div class="card-body">
+
+<h5>2. Which concept allows a class to inherit properties?</h5>
+
+<div class="form-check">
+<input class="form-check-input" type="radio" name="q2" value="a">
+<label class="form-check-label">Encapsulation</label>
+</div>
+
+<div class="form-check">
+<input class="form-check-input" type="radio" name="q2" value="b">
+<label class="form-check-label">Inheritance</label>
+</div>
+
+<div class="form-check">
+<input class="form-check-input" type="radio" name="q2" value="c">
+<label class="form-check-label">Object</label>
+</div>
+
+</div>
+</div>
+
+
+<div class="card mb-3">
+<div class="card-body">
+
+<h5>3. What keyword hides internal data?</h5>
+
+<div class="form-check">
+<input class="form-check-input" type="radio" name="q3" value="a">
+<label class="form-check-label">public</label>
+</div>
+
+<div class="form-check">
+<input class="form-check-input" type="radio" name="q3" value="b">
+<label class="form-check-label">private</label>
+</div>
+
+<div class="form-check">
+<input class="form-check-input" type="radio" name="q3" value="c">
+<label class="form-check-label">static</label>
+</div>
+
+</div>
+</div>
+
+
+<div class="text-center">
+<button type="button" class="btn btn-primary" onclick="checkQuiz()">Submit Quiz</button>
+</div>
+
+</form>
+
+<div class="text-center mt-4">
+<h4 id="score"></h4>
+</div>
+
+</section>
