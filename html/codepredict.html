@@ -9,7 +9,8 @@
 <title>Code Output Prediction</title>
 
 <link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="../css/style.css">
+<link id="darkmode-style" rel="stylesheet" href="../css/darkmode.css" disabled>
 
 </head>
 
@@ -20,7 +21,7 @@
 
 <div class="container">
 
-<a class="navbar-brand" href="index.html">The Guide to OOP</a>
+<a class="navbar-brand" href="#">OOP Learning Guide</a>
 
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
 <span class="navbar-toggler-icon"></span>
@@ -39,7 +40,11 @@
 </li>
 
 <li class="nav-item">
-<a class="nav-link" href="quiz.html">Quiz</a>
+<a class="nav-link" href="quiz.html">Practice Quiz</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="dragdrop.html">Code Builder</a>
 </li>
 
 <li class="nav-item">
@@ -48,180 +53,179 @@
 
 </ul>
 
+<button class="btn btn-outline-light ms-3" onclick="toggleDarkMode()">Dark Mode</button>
+
 </div>
 </div>
 </nav>
 
 
 <!-- HEADER -->
-<header class="bg-primary text-white text-center p-5">
+<header class="bg-success text-white text-center p-5">
 
 <h1>Code Output Prediction</h1>
-<p class="lead">Analyze the Java code and predict the output.</p>
+<p class="lead">Read the code and type the correct output</p>
 
 </header>
 
 
 <section class="container mt-5">
 
-<h2 class="mb-4 text-center">Question 1</h2>
+<form id="predictForm">
 
-<div class="card">
+<!-- QUESTION 1 -->
+
+<div class="card mb-4">
 
 <div class="card-body">
 
-<h5>Predict the Output:</h5>
+<h5>1. What will be printed?</h5>
 
-<pre>
-class Car {
+<pre class="bg-light p-3">
 
-String brand = "Toyota";
-
-void showBrand(){
-System.out.println(brand);
+class Dog {
+    void bark(){
+        System.out.println("Woof");
+    }
 }
 
+public class Test{
+    public static void main(String[] args){
+        Dog d = new Dog();
+        d.bark();
+    }
 }
 
-public class Main{
-
-public static void main(String[] args){
-
-Car c = new Car();
-c.showBrand();
-
-}
-
-}
 </pre>
 
-<label class="form-label">Type the output:</label>
-
-<input type="text" id="answer1" class="form-control">
-
-<button class="btn btn-primary mt-3" onclick="checkAnswer1()">
-Check Answer
-</button>
-
-<p id="result1" class="mt-3"></p>
+<input type="text" class="form-control" id="p1" placeholder="Type the output">
 
 </div>
 </div>
 
-</section>
 
+<!-- QUESTION 2 -->
 
-<section class="container mt-5">
-
-<h2 class="mb-4 text-center">Question 2</h2>
-
-<div class="card">
+<div class="card mb-4">
 
 <div class="card-body">
 
-<h5>Predict the Output:</h5>
+<h5>2. What will be printed?</h5>
 
-<pre>
+<pre class="bg-light p-3">
+
 class Animal {
-
-void sound(){
-System.out.println("Animal sound");
-}
-
+    void sound(){
+        System.out.println("Animal sound");
+    }
 }
 
 class Dog extends Animal{
-
 }
 
-public class Main{
-
-public static void main(String[] args){
-
-Dog d = new Dog();
-d.sound();
-
+public class Test{
+    public static void main(String[] args){
+        Dog d = new Dog();
+        d.sound();
+    }
 }
 
-}
 </pre>
 
-<label class="form-label">Type the output:</label>
-
-<input type="text" id="answer2" class="form-control">
-
-<button class="btn btn-primary mt-3" onclick="checkAnswer2()">
-Check Answer
-</button>
-
-<p id="result2" class="mt-3"></p>
+<input type="text" class="form-control" id="p2" placeholder="Type the output">
 
 </div>
 </div>
 
-</section>
 
+<!-- QUESTION 3 -->
 
-<section class="container mt-5">
-
-<h2 class="mb-4 text-center">Question 3</h2>
-
-<div class="card">
+<div class="card mb-4">
 
 <div class="card-body">
 
-<h5>Predict the Output:</h5>
+<h5>3. What will be printed?</h5>
 
-<pre>
-class Person {
+<pre class="bg-light p-3">
 
-private int age = 20;
+class Car {
 
-public int getAge(){
-return age;
-}
+    String brand = "Toyota";
 
 }
 
-public class Main{
+public class Test{
 
-public static void main(String[] args){
+    public static void main(String[] args){
 
-Person p = new Person();
-System.out.println(p.getAge());
+        Car c = new Car();
+        System.out.println(c.brand);
+
+    }
 
 }
 
-}
 </pre>
 
-<label class="form-label">Type the output:</label>
-
-<input type="text" id="answer3" class="form-control">
-
-<button class="btn btn-primary mt-3" onclick="checkAnswer3()">
-Check Answer
-</button>
-
-<p id="result3" class="mt-3"></p>
+<input type="text" class="form-control" id="p3" placeholder="Type the output">
 
 </div>
 </div>
 
-</section>
+
+<!-- QUESTION 4 -->
+
+<div class="card mb-4">
+
+<div class="card-body">
+
+<h5>4. What will be printed?</h5>
+
+<pre class="bg-light p-3">
+
+class MathTest{
+
+    int add(int a, int b){
+        return a + b;
+    }
+
+}
+
+public class Test{
+
+    public static void main(String[] args){
+
+        MathTest m = new MathTest();
+        System.out.println(m.add(3,4));
+
+    }
+
+}
+
+</pre>
+
+<input type="text" class="form-control" id="p4" placeholder="Type the output">
+
+</div>
+</div>
 
 
-<!-- SCORE -->
-<section class="container text-center mt-5">
+<div class="text-center">
 
-<button class="btn btn-success" onclick="showScore()">Show Score</button>
+<button type="button" class="btn btn-success" onclick="checkPrediction()">Check Answers</button>
 
-<h3 id="score" class="mt-3"></h3>
+</div>
+
+</form>
+
+
+<h3 class="text-center mt-4" id="result"></h3>
 
 </section>
 
 
 <!-- FOOTER -->
+
 <footer class="bg-dark text-white text-center p-3 mt-5">
 
 <p>LBYCPG3 | Batiller, Reantaso, Santos, Senario</p>
@@ -229,8 +233,9 @@ Check Answer
 </footer>
 
 
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/codepredict.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script src="../js/codepredict.js"></script>
+<script src="../js/darkmode.js"></script>
 
 </body>
 </html>

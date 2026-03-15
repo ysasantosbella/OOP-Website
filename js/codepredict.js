@@ -1,62 +1,30 @@
+function checkPrediction(){
+
 let score = 0;
 
-function checkAnswer1(){
+let a1 = document.getElementById("p1").value.trim().toLowerCase();
+let a2 = document.getElementById("p2").value.trim().toLowerCase();
+let a3 = document.getElementById("p3").value.trim().toLowerCase();
+let a4 = document.getElementById("p4").value.trim().toLowerCase();
 
-let answer = document.getElementById("answer1").value.toLowerCase();
 
-if(answer === "toyota"){
-
-document.getElementById("result1").innerHTML = "✅ Correct!";
+if(a1 === "woof"){
 score++;
-
-}else{
-
-document.getElementById("result1").innerHTML = "❌ Incorrect";
-
 }
 
-}
-
-
-function checkAnswer2(){
-
-let answer = document.getElementById("answer2").value.toLowerCase();
-
-if(answer === "animal sound"){
-
-document.getElementById("result2").innerHTML = "✅ Correct!";
+if(a2 === "animal sound"){
 score++;
-
-}else{
-
-document.getElementById("result2").innerHTML = "❌ Incorrect";
-
 }
 
-}
-
-
-function checkAnswer3(){
-
-let answer = document.getElementById("answer3").value;
-
-if(answer === "20"){
-
-document.getElementById("result3").innerHTML = "✅ Correct!";
+if(a3 === "toyota"){
 score++;
-
-}else{
-
-document.getElementById("result3").innerHTML = "❌ Incorrect";
-
 }
 
+if(a4 === "7"){
+score++;
 }
 
-
-function showScore(){
-
-document.getElementById("score").innerHTML =
-"Your Score: " + score + " / 3";
+document.getElementById("result").innerHTML =
+"Your Score: " + score + " / 4";
 
 }

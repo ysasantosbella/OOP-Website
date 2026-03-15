@@ -1,89 +1,208 @@
-<section class="container mt-5">
+<!DOCTYPE html>
+<html lang="en">
 
-<h2 class="text-center mb-4">OOP Practice Quiz</h2>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Quiz</title>
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<link id="darkmode-style" rel="stylesheet" href="../css/darkmode.css" disabled>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+<div class="container">
+
+<a class="navbar-brand" href="#">The Guide to Object Oriented Programming</a>
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navMenu">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="index.html">Home</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="oop.html">OOP Concepts</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link active" href="quiz.html">Practice Quiz</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="dragdrop.html">Code Builder</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="codepredict.html">Code Prediction</a>
+</li>
+
+</ul>
+
+<button class="btn btn-outline-light ms-3" onclick="toggleDarkMode()">Dark Mode</button>
+
+</div>
+</div>
+</nav>
+
+
+<!-- HEADER -->
+<header class="bg-primary text-white text-center p-5">
+
+<h1>Practice Quiz</h1>
+<p class="lead">Test your knowledge of Object-Oriented Programming</p>
+
+</header>
+
+
+<!-- QUIZ -->
+<section class="container mt-5">
 
 <form id="quizForm">
 
+<!-- Q1 -->
 <div class="card mb-3">
 <div class="card-body">
+<h5>1. What is a class in Object-Oriented Programming?</h5>
 
-<h5>1. What is a class?</h5>
-
-<div class="form-check">
-<input class="form-check-input" type="radio" name="q1" value="a">
-<label class="form-check-label">Instance of an object</label>
-</div>
-
-<div class="form-check">
-<input class="form-check-input" type="radio" name="q1" value="b">
-<label class="form-check-label">Blueprint for objects</label>
-</div>
-
-<div class="form-check">
-<input class="form-check-input" type="radio" name="q1" value="c">
-<label class="form-check-label">A loop structure</label>
-</div>
+<input type="radio" name="q1" value="a"> A variable<br>
+<input type="radio" name="q1" value="b"> A blueprint for creating objects<br>
+<input type="radio" name="q1" value="c"> A loop structure
 
 </div>
 </div>
 
 
+<!-- Q2 -->
 <div class="card mb-3">
 <div class="card-body">
+<h5>2. What is an object?</h5>
 
-<h5>2. Which concept allows a class to inherit properties?</h5>
-
-<div class="form-check">
-<input class="form-check-input" type="radio" name="q2" value="a">
-<label class="form-check-label">Encapsulation</label>
-</div>
-
-<div class="form-check">
-<input class="form-check-input" type="radio" name="q2" value="b">
-<label class="form-check-label">Inheritance</label>
-</div>
-
-<div class="form-check">
-<input class="form-check-input" type="radio" name="q2" value="c">
-<label class="form-check-label">Object</label>
-</div>
+<input type="radio" name="q2" value="a"> An instance of a class<br>
+<input type="radio" name="q2" value="b"> A method<br>
+<input type="radio" name="q2" value="c"> A loop
 
 </div>
 </div>
 
 
+<!-- Q3 -->
 <div class="card mb-3">
 <div class="card-body">
+<h5>3. What does a class define?</h5>
 
-<h5>3. What keyword hides internal data?</h5>
+<input type="radio" name="q3" value="a"> Variables and methods<br>
+<input type="radio" name="q3" value="b"> Loops only<br>
+<input type="radio" name="q3" value="c"> HTML elements
 
-<div class="form-check">
-<input class="form-check-input" type="radio" name="q3" value="a">
-<label class="form-check-label">public</label>
+</div>
 </div>
 
-<div class="form-check">
-<input class="form-check-input" type="radio" name="q3" value="b">
-<label class="form-check-label">private</label>
+
+<!-- Q4 -->
+<div class="card mb-3">
+<div class="card-body">
+<h5>4. Which concept allows one class to inherit another class's properties?</h5>
+
+<input type="radio" name="q4" value="a"> Encapsulation<br>
+<input type="radio" name="q4" value="b"> Inheritance<br>
+<input type="radio" name="q4" value="c"> Object
+
+</div>
 </div>
 
-<div class="form-check">
-<input class="form-check-input" type="radio" name="q3" value="c">
-<label class="form-check-label">static</label>
+
+<!-- Q5 -->
+<div class="card mb-3">
+<div class="card-body">
+<h5>5. In the example "Dog extends Animal", what does this mean?</h5>
+
+<input type="radio" name="q5" value="a"> Dog inherits from Animal<br>
+<input type="radio" name="q5" value="b"> Dog deletes Animal<br>
+<input type="radio" name="q5" value="c"> Dog replaces Animal
+
 </div>
+</div>
+
+
+<!-- Q6 -->
+<div class="card mb-3">
+<div class="card-body">
+<h5>6. What is encapsulation?</h5>
+
+<input type="radio" name="q6" value="a"> Hiding internal data<br>
+<input type="radio" name="q6" value="b"> Repeating loops<br>
+<input type="radio" name="q6" value="c"> Creating objects
+
+</div>
+</div>
+
+
+<!-- Q7 -->
+<div class="card mb-3">
+<div class="card-body">
+<h5>7. Why do we use private variables?</h5>
+
+<input type="radio" name="q7" value="a"> To hide internal data<br>
+<input type="radio" name="q7" value="b"> To speed up loops<br>
+<input type="radio" name="q7" value="c"> To delete data
+
+</div>
+</div>
+
+
+<!-- Q8 -->
+<div class="card mb-3">
+<div class="card-body">
+<h5>8. How can private data be accessed?</h5>
+
+<input type="radio" name="q8" value="a"> Through public methods<br>
+<input type="radio" name="q8" value="b"> Direct access<br>
+<input type="radio" name="q8" value="c"> HTML tags
 
 </div>
 </div>
 
 
 <div class="text-center">
+
 <button type="button" class="btn btn-primary" onclick="checkQuiz()">Submit Quiz</button>
+
 </div>
 
 </form>
 
-<div class="text-center mt-4">
-<h4 id="score"></h4>
-</div>
+<h3 class="text-center mt-4" id="score"></h3>
 
 </section>
+
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white text-center p-3 mt-5">
+
+<p>We certify that no AI tools were used in proposing, designing, coding, or documenting this project.</p>
+<p>LBYCPG3 | Batiller, Reantaso, Santos, Senario</p>
+
+</footer>
+
+
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script src="../js/quiz.js"></script>
+<script src="../js/darkmode.js"></script>
+
+</body>
+</html>
