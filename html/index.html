@@ -1,170 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Object Oriented Programming</title>
-
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link id="darkmode-style" rel="stylesheet" href="../css/darkmode.css" disabled>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Guide to Object Oriented Programming</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" id="darkmode-style" href="../css/darkmode.css" disabled />
 </head>
-
 <body>
 
-    <!-- NAVIGATION BAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
+  <!-- NAVBAR -->
+  <!-- The navigation bar is dynamically loaded here using navbar.js -->
+  <div id="navbar-root"></div>
 
-            <a class="navbar-brand" href="#">The Guide to Object Oriented Programming</a>
+  <!-- HERO SECTION -->
+  <!-- This is the main landing section. Includes background grid, title, subtitle, CTA button, and a sample code window. -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-content">
+      <!-- Badge showing platform type -->
+      <span class="hero-badge">Java Learning Platform</span>
+      <!-- Main title with emphasis on Java OOP -->
+      <h1 class="hero-title">New to<br><span class="hero-accent">Java OOP?</span></h1>
+      <!-- Short description under the title -->
+      <p class="hero-subtitle">Explore the fundamental concepts of OOP through interactive activities</p>
+      <!-- Call-to-action button linking to features section -->
+      <a href="#features" class="hero-btn">Start Learning <span class="btn-arrow">↓</span></a>
+    </div>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navMenu">
-
-                <ul class="navbar-nav ms-auto">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="oop.html">OOP Concepts</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="quiz.html">Practice Quiz</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="dragdrop.html">Code Builder</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="codepredict.html">Code Prediction</a>
-                    </li>
-
-                </ul>
-
-                <button class="btn btn-outline-light ms-3" onclick="toggleDarkMode()">Dark Mode</button>
-
-            </div>
+    <!-- Hero visual: shows a sample Java code snippet in a stylized code window -->
+    <div class="hero-visual">
+      <div class="code-window">
+        <div class="code-window-bar">
+          <!-- Red, yellow, green dots imitate a code editor window -->
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="code-window-title">Main.java</span>
         </div>
-    </nav>
-
-
-    <!-- MAIN SECTION -->
-    <header class="bg-primary text-white text-center p-5">
-
-        <div class="container">
-
-            <h1>NEW TO JAVA OOP?</h1>
-
-            <p class="lead"> <!-- Insert more information here -->
-                Explore the fundamental concepts of OOP through interactive activities
-            </p>
-
-            <a href="oop.html" class="btn btn-light btn-lg mt-3">
-                Start Learning
-            </a>
-
+        <div class="code-window-body">
+          <!-- Sample Java code snippet demonstrating object creation and method call -->
+          <span class="kw">public class</span> <span class="cn">Main</span> {<br>
+          &nbsp;&nbsp;<span class="kw">public static void</span> main(<span class="cn">String</span>[] args) {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="cm">// Create an object of Dog class</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="cn">Dog</span> d = <span class="kw">new</span> <span class="cn">Dog</span>();<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;d.bark();<br>
+          &nbsp;&nbsp;}<br>
+          }
         </div>
+      </div>
+    </div>
+  </section>
 
-    </header>
+  <!-- FEATURES SECTION -->
+  <!-- Lists the core interactive features of the platform: Explore, Quiz, Code Builder, and Code Prediction -->
+  <section class="features" id="features">
+    <div class="features-inner">
+      <p class="features-eyebrow">Explore the Guide</p>
+      <h2 class="features-title">Everything you need to learn Java OOP</h2>
+      <div class="cards-grid">
 
+        <!-- Feature card: Explore -->
+        <a href="oop.html" class="feature-card">
+          <div class="feature-card-icon">
+            <img src="assets/explore.png" alt="Explore Icon">
+          </div>
+          <h3 class="feature-card-title">Explore</h3>
+          <p class="feature-card-desc">Learn Classes, Objects, Inheritance, and Encapsulation with clear examples.</p>
+          <span class="feature-card-cta">Start exploring →</span>
+        </a>
 
-    <!-- FEATURES SECTION -->
-    <section class="container mt-5">
+        <!-- Feature card: Practice Quiz -->
+        <a href="quiz.html" class="feature-card">
+          <div class="feature-card-icon">
+            <img src="assets/practiceQuiz.png" alt="Practice Quiz Icon">
+          </div>
+          <h3 class="feature-card-title">Practice Quiz</h3>
+          <p class="feature-card-desc">Test your OOP knowledge with a short multiple-choice quiz.</p>
+          <span class="feature-card-cta">Take the quiz →</span>
+        </a>
 
-        <div class="row text-center">
+        <!-- Feature card: Code Builder -->
+        <a href="dragdrop.html" class="feature-card">
+          <div class="feature-card-icon">
+            <img src="assets/codeBuilder.png" alt="Code Builder Icon">
+          </div>
+          <h3 class="feature-card-title">Code Builder</h3>
+          <p class="feature-card-desc">Drag and drop scrambled code lines to assemble working Java programs.</p>
+          <span class="feature-card-cta">Start building →</span>
+        </a>
 
-            <div class="col-md-3">
+        <!-- Feature card: Code Prediction -->
+        <a href="codepredict.html" class="feature-card">
+          <div class="feature-card-icon">
+            <img src="assets/codePrediction.png" alt="Code Prediction Icon">
+          </div>
+          <h3 class="feature-card-title">Code Prediction</h3>
+          <p class="feature-card-desc">Read code snippets and predict the console output to test understanding.</p>
+          <span class="feature-card-cta">Try predicting →</span>
+        </a>
 
-                <h4>OOP Concepts</h4>
+      </div>
+    </div>
+  </section>
 
-                <p> <!-- Insert more information here -->
-                    Learn the basic principles of object-oriented programming including
-                    classes, objects, inheritance, and encapsulation.
-                </p>
+  <!-- FOOTER -->
+  <!-- Contains logo and credits for the project -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">☕ OOP Guide</span>
+      <span class="footer-credit">No AI tools were used in proposing, designing, coding, or documenting this project.</span>
+      <span class="footer-credit">LBYCPG3 | Batiller, Reantaso, Santos, Senario</span>
+    </div>
+  </footer>
 
-                <a href="oop.html" class="btn btn-outline-primary">
-                    Explore
-                </a>
-
-            </div>
-
-
-            <div class="col-md-3">
-
-                <h4>Practice Quiz</h4>
-
-                <p> <!-- Insert more information here -->
-                    Test your understanding of OOP concepts through interactive quizzes.
-                </p>
-
-                <a href="quiz.html" class="btn btn-outline-primary">
-                    Take Quiz
-                </a>
-
-            </div>
-
-
-            <div class="col-md-3">
-
-                <h4>Code Builder</h4>
-
-                <p> <!-- Insert more information here -->
-                    Arrange code snippets in the correct order to construct working
-                    Java programs.
-                </p>
-
-                <a href="dragdrop.html" class="btn btn-outline-primary">
-                    Try Activity
-                </a>
-
-            </div>
-
-
-            <div class="col-md-3">
-
-                <h4>Code Prediction</h4>
-
-                <p> <!-- Insert more information here -->
-                    Analyze Java code and predict the output to strengthen your
-                    programming logic.
-                </p>
-
-                <a href="codepredict.html" class="btn btn-outline-primary">
-                    Start
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer class="bg-dark text-white text-center p-3 mt-5">
-
-        <p>We certify that no AI tools were used in proposing, designing, coding, or documenting this project.</p>
-        <p>LBYCPG3 | Batiller, Reantaso, Santos, Senario </p>
-
-    </footer>
-
-
-    <!-- Bootstrap JS -->
-    <script src="js/bootstrap.bundle.min.js"></script>
-
-    <!-- JS File -->
-    <script src="../js/main.js"></script>
-    <script src="../js/darkmode.js"></script>
-
-</body>
-
-</html>
+  <!-- Scripts -->
+  <!-- Navbar and main JS functionalities -->
+  <script src="../js/navbar.js"></script>
+  <script src="../js/main.js"></script>

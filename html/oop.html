@@ -1,252 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Object Oriented Programming</title>
-
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link id="darkmode-style" rel="stylesheet" href="../css/darkmode.css" disabled>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OOP Concepts — OOP Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/oop.css" />
+  <link rel="stylesheet" id="darkmode-style" href="../css/darkmode.css" disabled />
 </head>
-
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
 
-            <a class="navbar-brand" href="#">The Guide to Object Oriented Programming</a>
+<!-- NAVBAR -->
+<!-- The navigation bar is dynamically injected here using navbar.js -->
+<div id="navbar-root"></div>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<!-- PAGE LAYOUT -->
+<!-- Wraps the whole page layout with a sidebar and main content -->
+<div class="oop-layout">
 
-            <div class="collapse navbar-collapse" id="navMenu">
+  <!-- LEFT CONCEPT NAVIGATION -->
+  <!-- Sidebar that lets users quickly jump to each OOP concept -->
+  <aside class="concept-nav">
+    <p class="concept-nav-label">Concepts</p>
+    <a href="#class" class="concept-nav-item active">1. Class</a>
+    <a href="#object" class="concept-nav-item">2. Object</a>
+    <a href="#inheritance" class="concept-nav-item">3. Inheritance</a>
+    <a href="#encapsulation" class="concept-nav-item">4. Encapsulation</a>
+  </aside>
 
-                <ul class="navbar-nav ms-auto">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="oop.html">OOP Concepts</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="quiz.html">Practice Quiz</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="dragdrop.html">Code Builder</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="codepredict.html">Code Prediction</a>
-                    </li>
-
-                </ul>
-
-                <button class="btn btn-outline-light ms-3" onclick="toggleDarkMode()">Dark Mode</button>
-
-            </div>
-        </div>
-    </nav>
-
+  <!-- MAIN CONTENT AREA -->
+  <main class="oop-main">
 
     <!-- PAGE HEADER -->
-    <header class="bg-primary text-white text-center p-5">
+    <!-- Displays the page title and subtitle for context -->
+    <div class="oop-page-header">
+      <h1 class="oop-page-title">Java Object-Oriented<br>Programming Concepts</h1>
+      <p class="oop-page-subtitle">Learn the fundamental principles of Object-Oriented Programming</p>
+    </div>
 
-        <h1>Java Object-Oriented Programming Concepts</h1>
-
-        <p class="lead">
-            Learn the fundamental principles of Object-Oriented Programming
+    <!-- 1. CLASS SECTION -->
+    <!-- Explains what a Class is and includes a toggleable example -->
+    <section class="concept-section" id="class">
+      <h2 class="concept-number">1.</h2>
+      <div class="concept-body">
+        <h3 class="concept-title">Class</h3>
+        <p class="concept-desc">
+          A class is like a blueprint or template. It defines what properties (variables) and behaviors (methods) objects of this type will have.
         </p>
+        <!-- Button to show/hide example code -->
+        <button class="show-btn" onclick="toggleExample('classExample', this)">
+          + Show Examples
+        </button>
+        <!-- Example code block (hidden by default, toggled with button) -->
+        <div class="example-block" id="classExample">
+          <div class="code-block">
+            <pre><span class="kw">class</span> <span class="cn">Car</span> {
 
-    </header>
+    <span class="cn">String</span> brand;
+    <span class="kw">int</span> speed;
 
+    <span class="kw">void</span> drive() {
+        System.out.println(<span class="str">"The car is moving"</span>);
+    }
 
-    <!-- OOP CONTENT -->
-    <section class="container mt-5">
-
-
-        <!-- CLASS -->
-        <div class="card mb-4">
-
-            <div class="card-body">
-
-                <h3>1. Class</h3>
-
-                <p>
-                    A class is a blueprint or template used to create objects.
-                    It defines the properties (variables) and behaviors (methods) of an object.
-                </p>
-
-                <button class="btn btn-primary" onclick="toggleExplanation('classExample')">
-                    Show Example
-                </button>
-
-                <div id="classExample" style="display:none; margin-top:10px;">
-
-                    <pre>
-                    class Car {
-
-                    String brand;
-                    int speed;
-
-                    void drive(){
-                    System.out.println("The car is moving");
-                    }
-
-                    }
-                    </pre>
-
-                </div>
-
-            </div>
-
+}</pre>
+          </div>
         </div>
-
-
-        <!-- OBJECT -->
-        <div class="card mb-4">
-
-            <div class="card-body">
-
-                <h3>2. Object</h3>
-
-                <p>
-                    An object is an instance of a class. It represents a real-world entity
-                    and contains properties and behaviors defined in the class.
-                </p>
-
-                <button class="btn btn-primary" onclick="toggleExplanation('objectExample')">
-                    Show Example
-                </button>
-
-                <div id="objectExample" style="display:none; margin-top:10px;">
-
-                    <pre>
-                    Car myCar = new Car();
-
-                    myCar.brand = "Toyota";
-                    myCar.speed = 100;
-
-                    myCar.drive();
-                    </pre>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- INHERITANCE -->
-        <div class="card mb-4">
-
-            <div class="card-body">
-
-                <h3>3. Inheritance</h3>
-
-                <p>
-                    Inheritance allows one class to inherit properties and methods
-                    from another class. This promotes code reusability.
-                </p>
-
-                <button class="btn btn-primary" onclick="toggleExplanation('inheritanceExample')">
-                    Show Example
-                </button>
-
-                <div id="inheritanceExample" style="display:none; margin-top:10px;">
-
-                    <pre>
-                    class Animal {
-
-                    void eat(){
-                    System.out.println("This animal eats food");
-                    }
-
-                    }
-
-                    class Dog extends Animal {
-
-                    void bark(){
-                    System.out.println("The dog barks");
-                    }
-
-                    }
-                    </pre>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- ENCAPSULATION -->
-        <div class="card mb-4">
-
-            <div class="card-body">
-
-                <h3>4. Encapsulation</h3>
-
-                <p>
-                    Encapsulation is the process of hiding internal data
-                    and only allowing access through public methods.
-                </p>
-
-                <button class="btn btn-primary" onclick="toggleExplanation('encapsulationExample')">
-                    Show Example
-                </button>
-
-                <div id="encapsulationExample" style="display:none; margin-top:10px;">
-
-                    <pre>
-                    class Person {
-
-                    private int age;
-
-                    public void setAge(int a){
-                    age = a;
-                    }
-
-                    public int getAge(){
-                    return age;
-                    }
-
-                    }
-                    </pre>
-
-                </div>
-
-            </div>
-
-        </div>
-
+      </div>
     </section>
 
-    <!-- BOOTSTRAP JS -->
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- 2. OBJECT SECTION -->
+    <!-- Shows what an Object is, with a live example of using a Class -->
+    <section class="concept-section" id="object">
+      <h2 class="concept-number">2.</h2>
+      <div class="concept-body">
+        <h3 class="concept-title">Object</h3>
+        <p class="concept-desc">
+          An object is an instance of a class. Think of it as a real-world entity created using the class blueprint.
+        </p>
+        <button class="show-btn" onclick="toggleExample('objectExample', this)">
+          + Show Examples
+        </button>
+        <div class="example-block" id="objectExample">
+          <div class="code-block">
+            <pre><span class="cn">Car</span> myCar = <span class="kw">new</span> <span class="cn">Car</span>();
 
-    <!-- Custom JS -->
-    <script src="../js/main.js"></script>
-    <script src="../js/darkmode.js"></script>
+myCar.brand = <span class="str">"Toyota"</span>;
+myCar.speed = <span class="str">100</span>;
 
-    <!-- FOOTER -->
-    <footer class="bg-dark text-white text-center p-3 mt-5">
+myCar.drive();</pre>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <p>We certify that no AI tools were used in proposing, designing, coding, or documenting this project.</p>
-        <p>LBYCPG3 | Batiller, Reantaso, Santos, Senario </p>
-        
-    </footer>
+    <!-- 3. INHERITANCE SECTION -->
+    <!-- Explains inheritance and how one class can extend another -->
+    <section class="concept-section" id="inheritance">
+      <h2 class="concept-number">3.</h2>
+      <div class="concept-body">
+        <h3 class="concept-title">Inheritance</h3>
+        <p class="concept-desc">
+          Inheritance lets one class take on properties and methods of another class. This helps reuse code and avoid repetition.
+        </p>
+        <button class="show-btn" onclick="toggleExample('inheritanceExample', this)">
+          + Show Examples
+        </button>
+        <div class="example-block" id="inheritanceExample">
+          <div class="code-block">
+            <pre><span class="kw">class</span> <span class="cn">Animal</span> {
 
+    <span class="kw">void</span> eat() {
+        System.out.println(<span class="str">"This animal eats food"</span>);
+    }
 
+}
 
-</body>
+<span class="kw">class</span> <span class="cn">Dog</span> <span class="kw">extends</span> <span class="cn">Animal</span> {
 
-</html>
+    <span class="kw">void</span> bark() {
+        System.out.println(<span class="str">"The dog barks"</span>);
+    }
+
+}</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ENCAPSULATION SECTION -->
+    <!-- Demonstrates encapsulation using private variables with getters and setters -->
+    <section class="concept-section" id="encapsulation">
+      <h2 class="concept-number">4.</h2>
+      <div class="concept-body">
+        <h3 class="concept-title">Encapsulation</h3>
+        <p class="concept-desc">
+          Encapsulation hides internal data and allows controlled access through public methods. This keeps the object safe and maintainable.
+        </p>
+        <button class="show-btn" onclick="toggleExample('encapsulationExample', this)">
+          + Show Examples
+        </button>
+        <div class="example-block" id="encapsulationExample">
+          <div class="code-block">
+            <pre><span class="kw">class</span> <span class="cn">Person</span> {
+
+    <span class="kw">private int</span> age;
+
+    <span class="kw">public void</span> setAge(<span class="kw">int</span> a) {
+        age = a;
+    }
+
+    <span class="kw">public int</span> getAge() {
+        <span class="kw">return</span> age;
+    }
+
+}</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<!-- Contains project logo and credits -->
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-logo">☕ OOP Guide</span>
+    <span class="footer-credit">No AI tools were used in proposing, designing, coding, or documenting this project.</span>
+    <span class="footer-credit">LBYCPG3 | Batiller, Reantaso, Santos, Senario</span>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<!-- Load JS files for navbar, page interactions, and OOP examples toggle -->
+<script src="../js/navbar.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/oop.js"></script>

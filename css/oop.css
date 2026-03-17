@@ -1,0 +1,307 @@
+/* =============================================
+   OOP CONCEPTS PAGE — oop.css
+   Layout Structure:
+   - Left: Sticky concept navigation
+   - Right: Scrollable main content
+   Designed for clarity, readability, and modular scaling
+   ============================================= */
+
+/* ---------- PAGE WRAPPER ---------- */
+/* Main container controlling layout, spacing, and alignment */
+.oop-layout {
+  display: flex;
+  min-height: calc(100vh - var(--nav-h));
+  margin-top: var(--nav-h);
+
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding: 0 24px;
+  gap: 0;
+}
+
+/* ---------- LEFT CONCEPT NAVIGATION ---------- */
+/* Sticky sidebar for quick navigation between OOP concepts */
+.concept-nav {
+  width: 200px;
+  flex-shrink: 0;
+
+  padding: 48px 0;
+  position: sticky;
+  top: var(--nav-h);
+  height: fit-content;
+
+  border-right: 1.5px solid var(--gray-200);
+}
+
+/* Section label (e.g., "Concepts") */
+.concept-nav-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: var(--gray-400);
+  margin-bottom: 12px;
+  padding-left: 4px;
+}
+
+/* Individual navigation links */
+.concept-nav-item {
+  display: block;
+  padding: 9px 12px;
+
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--gray-600);
+
+  border-radius: var(--r-sm);
+  margin-bottom: 2px;
+
+  border-left: 3px solid transparent;
+  transition: background var(--ease), color var(--ease);
+}
+
+/* Hover state for better interaction feedback */
+.concept-nav-item:hover {
+  background: var(--gray-100);
+  color: var(--java-blue);
+}
+
+/* Active state highlights the selected concept */
+.concept-nav-item.active {
+  color: var(--java-blue);
+  font-weight: 700;
+
+  border-left-color: var(--java-blue);
+  background: var(--gray-50);
+}
+
+/* ---------- MAIN CONTENT AREA ---------- */
+/* Container for all concept sections and page content */
+.oop-main {
+  flex: 1;
+  min-width: 0;
+
+  padding: 48px 0 80px 56px;
+}
+
+/* ---------- PAGE HEADER ---------- */
+/* Title and subtitle introducing the OOP concepts page */
+.oop-page-header {
+  margin-bottom: 52px;
+  padding-bottom: 28px;
+
+  border-bottom: 1.5px solid var(--gray-200);
+}
+
+/* Main page title */
+.oop-page-title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+
+  color: var(--java-blue-dark);
+  margin-bottom: 10px;
+}
+
+/* Supporting subtitle text */
+.oop-page-subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--gray-600);
+}
+
+/* ---------- CONCEPT SECTIONS ---------- */
+/* Individual sections representing each OOP concept */
+.concept-section {
+  display: flex;
+  gap: 20px;
+
+  margin-bottom: 52px;
+  padding-bottom: 52px;
+
+  border-bottom: 1px solid var(--gray-200);
+
+  /* Ensures correct scroll offset when using anchor links */
+  scroll-margin-top: calc(var(--nav-h) + 24px);
+}
+
+/* Removes border from last section */
+.concept-section:last-child {
+  border-bottom: none;
+}
+
+/* Concept numbering (e.g., 01, 02, etc.) */
+.concept-number {
+  width: 36px;
+  flex-shrink: 0;
+
+  font-family: var(--mono);
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1;
+
+  color: var(--gray-200);
+  padding-top: 2px;
+}
+
+/* Wrapper for text content inside each concept */
+.concept-body {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Concept title */
+.concept-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+
+  color: var(--java-blue-dark);
+  margin-bottom: 10px;
+}
+
+/* Concept description */
+.concept-desc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+
+  color: var(--gray-600);
+  margin-bottom: 16px;
+
+  max-width: 600px;
+}
+
+/* ---------- TOGGLE BUTTON (SHOW EXAMPLES) ---------- */
+/* Button used to reveal/hide code examples */
+.show-btn {
+  display: block;
+
+  background: none;
+  border: none;
+  padding: 0;
+
+  font-family: var(--font);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+
+  color: var(--java-blue);
+  cursor: pointer;
+
+  margin-bottom: 16px;
+  transition: color var(--ease);
+}
+
+/* Hover state for toggle button */
+.show-btn:hover {
+  color: var(--java-orange);
+}
+
+/* ---------- EXAMPLE CODE BLOCK ---------- */
+/* Hidden container for code examples (toggled via JS) */
+.example-block {
+  display: none;
+  margin-top: 4px;
+}
+
+/* Visible state when toggled */
+.example-block.open {
+  display: block;
+}
+
+/* Code container styling */
+.code-block {
+  max-width: 580px;
+  overflow-x: auto;
+
+  background: #f4f6f9;
+  border: 1.5px solid var(--gray-200);
+  border-left: 4px solid var(--java-blue);
+  border-radius: var(--r-sm);
+}
+
+/* Code text formatting */
+.code-block pre {
+  margin: 0;
+  padding: 20px 24px;
+
+  font-family: var(--mono);
+  font-size: 0.84rem;
+  line-height: 1.85;
+
+  color: var(--gray-800);
+  white-space: pre;
+}
+
+/* Syntax highlighting classes */
+.kw  { color: #0D47A1; font-weight: 700; } /* Keywords */
+.cn  { color: #1565C0; }                   /* Class / Names */
+.str { color: #2E7D32; }                   /* Strings */
+.cm  { color: #888; font-style: italic; }  /* Comments */
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+/* Adjusts layout for tablets and smaller screens */
+@media (max-width: 768px) {
+
+  /* Stack layout vertically */
+  .oop-layout {
+    flex-direction: column;
+    padding: 0 16px;
+  }
+
+  /* Convert sidebar into horizontal navigation */
+  .concept-nav {
+    width: 100%;
+    position: static;
+
+    border-right: none;
+    border-bottom: 1.5px solid var(--gray-200);
+
+    padding: 24px 0 16px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .concept-nav-label {
+    width: 100%;
+    margin-bottom: 6px;
+  }
+
+  /* Compact nav items for smaller screens */
+  .concept-nav-item {
+    margin-bottom: 0;
+    padding: 6px 12px;
+
+    font-size: 0.82rem;
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    border-radius: var(--r-sm);
+  }
+
+  /* Active state adjusted for horizontal layout */
+  .concept-nav-item.active {
+    border-left: none;
+    border-bottom-color: var(--java-blue);
+  }
+
+  /* Adjust main content spacing */
+  .oop-main {
+    padding: 32px 0 60px 0;
+  }
+
+  /* Reduce spacing for tighter layout */
+  .concept-section {
+    gap: 12px;
+  }
+
+  .concept-number {
+    width: 28px;
+    font-size: 1.2rem;
+  }
+}
