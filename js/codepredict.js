@@ -6,7 +6,7 @@ let a1 = document.getElementById("p1").value.trim().toLowerCase();
 let a2 = document.getElementById("p2").value.trim().toLowerCase();
 let a3 = document.getElementById("p3").value.trim().toLowerCase();
 let a4 = document.getElementById("p4").value.trim().toLowerCase();
-
+let a5 = document.getElementById("p5").value.trim().toLowerCase();
 
 if(a1 === "woof"){
 score++;
@@ -24,7 +24,11 @@ if(a4 === "7"){
 score++;
 }
 
+if(a5 === "hello"){
+score++;
+}
+
 document.getElementById("result").innerHTML =
-"Your Score: " + score + " / 4";
+"Your Score: " + score + " / 5";
 
 }

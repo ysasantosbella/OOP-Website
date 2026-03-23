@@ -5,9 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Code Output Prediction</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" id="darkmode-style" href="../css/darkmode.css" disabled>
@@ -108,14 +110,42 @@ public class Test{
         System.out.println(m.add(3,4));
     }
 }</pre>
-        </div>
-        <div class="text-center">
-          <button type="button" class="btn btn-success" onclick="checkPrediction()">Check Answers</button>
+          <input type="text" class="form-control" id="p4" placeholder="Type the output">
         </div>
       </div>
 
+      <!-- QUESTION 5 -->
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5>5. What will be printed?</h5>
+          <pre class="bg-light p-3">
+class Person {
+
+    void greet(){
+        System.out.println("Hello");
+    }
+
+}
+
+public class Test{
+    public static void main(String[] args){
+        Person p = new Person();
+        p.greet();
+    }
+}</pre>
+          <input type="text" class="form-control" id="p5" placeholder="Type the output">
+        </div>
+      </div>
+
+      <!-- BUTTON -->
+      <div class="text-center">
+        <button type="button" class="btn btn-success" onclick="checkPrediction()">Check Answers</button>
+      </div>
+
     </form>
+
     <h3 class="text-center mt-4" id="result"></h3>
+
   </section>
 
   <!-- FOOTER -->
