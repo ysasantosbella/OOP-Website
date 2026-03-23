@@ -1,18 +1,21 @@
 /* =============================================
    OOP CONCEPTS PAGE — oop.css
-   Layout Structure:
+   Defines the layout and styling for the OOP Concepts page.
+   Structure:
    - Left: Sticky concept navigation
-   - Right: Scrollable main content
-   Designed for clarity, readability, and modular scaling
+   - Right: Scrollable content area
+   Focus: readability, spacing consistency, and scalability
    ============================================= */
 
-/* ---------- PAGE WRAPPER ---------- */
-/* Main container controlling layout, spacing, and alignment */
+/* ---------- PAGE LAYOUT ----------
+   Root flex container that controls overall structure
+---------------------------------- */
 .oop-layout {
   display: flex;
   min-height: calc(100vh - var(--nav-h));
   margin-top: var(--nav-h);
 
+  /* Centered layout with max width constraint */
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -21,8 +24,9 @@
   gap: 0;
 }
 
-/* ---------- LEFT CONCEPT NAVIGATION ---------- */
-/* Sticky sidebar for quick navigation between OOP concepts */
+/* ---------- CONCEPT NAV (LEFT PANEL) ----------
+   Sticky sidebar for navigating between sections
+---------------------------------- */
 .concept-nav {
   width: 200px;
   flex-shrink: 0;
@@ -47,7 +51,7 @@
   padding-left: 4px;
 }
 
-/* Individual navigation links */
+/* Navigation items */
 .concept-nav-item {
   display: block;
   padding: 9px 12px;
@@ -63,13 +67,13 @@
   transition: background var(--ease), color var(--ease);
 }
 
-/* Hover state for better interaction feedback */
+/* Hover feedback */
 .concept-nav-item:hover {
   background: var(--gray-100);
   color: var(--java-blue);
 }
 
-/* Active state highlights the selected concept */
+/* Active state (current section) */
 .concept-nav-item.active {
   color: var(--java-blue);
   font-weight: 700;
@@ -78,17 +82,20 @@
   background: var(--gray-50);
 }
 
-/* ---------- MAIN CONTENT AREA ---------- */
-/* Container for all concept sections and page content */
+/* ---------- MAIN CONTENT ----------
+   Container for all concept sections
+---------------------------------- */
 .oop-main {
   flex: 1;
   min-width: 0;
 
+  /* Left padding separates content from sidebar */
   padding: 48px 0 80px 56px;
 }
 
-/* ---------- PAGE HEADER ---------- */
-/* Title and subtitle introducing the OOP concepts page */
+/* ---------- PAGE HEADER ----------
+   Introductory section (title + subtitle)
+---------------------------------- */
 .oop-page-header {
   margin-bottom: 52px;
   padding-bottom: 28px;
@@ -96,7 +103,7 @@
   border-bottom: 1.5px solid var(--gray-200);
 }
 
-/* Main page title */
+/* Main title */
 .oop-page-title {
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-weight: 800;
@@ -107,15 +114,16 @@
   margin-bottom: 10px;
 }
 
-/* Supporting subtitle text */
+/* Subtitle / description */
 .oop-page-subtitle {
   font-size: 1rem;
   font-weight: 400;
   color: var(--gray-600);
 }
 
-/* ---------- CONCEPT SECTIONS ---------- */
-/* Individual sections representing each OOP concept */
+/* ---------- CONCEPT SECTIONS ----------
+   Individual blocks per OOP concept
+---------------------------------- */
 .concept-section {
   display: flex;
   gap: 20px;
@@ -125,16 +133,16 @@
 
   border-bottom: 1px solid var(--gray-200);
 
-  /* Ensures correct scroll offset when using anchor links */
+  /* Offsets anchor scroll to avoid navbar overlap */
   scroll-margin-top: calc(var(--nav-h) + 24px);
 }
 
-/* Removes border from last section */
+/* Remove divider on last section */
 .concept-section:last-child {
   border-bottom: none;
 }
 
-/* Concept numbering (e.g., 01, 02, etc.) */
+/* Concept index (01, 02, etc.) */
 .concept-number {
   width: 36px;
   flex-shrink: 0;
@@ -148,13 +156,13 @@
   padding-top: 2px;
 }
 
-/* Wrapper for text content inside each concept */
+/* Text container */
 .concept-body {
   flex: 1;
   min-width: 0;
 }
 
-/* Concept title */
+/* Section title */
 .concept-title {
   font-size: 1.25rem;
   font-weight: 700;
@@ -163,7 +171,7 @@
   margin-bottom: 10px;
 }
 
-/* Concept description */
+/* Description text */
 .concept-desc {
   font-size: 0.95rem;
   line-height: 1.7;
@@ -174,8 +182,9 @@
   max-width: 600px;
 }
 
-/* ---------- TOGGLE BUTTON (SHOW EXAMPLES) ---------- */
-/* Button used to reveal/hide code examples */
+/* ---------- TOGGLE (EXAMPLES) ----------
+   Button for showing/hiding code snippets
+---------------------------------- */
 .show-btn {
   display: block;
 
@@ -195,24 +204,25 @@
   transition: color var(--ease);
 }
 
-/* Hover state for toggle button */
+/* Hover state */
 .show-btn:hover {
   color: var(--java-orange);
 }
 
-/* ---------- EXAMPLE CODE BLOCK ---------- */
-/* Hidden container for code examples (toggled via JS) */
+/* ---------- CODE EXAMPLES ----------
+   Hidden by default; toggled via JS
+---------------------------------- */
 .example-block {
   display: none;
   margin-top: 4px;
 }
 
-/* Visible state when toggled */
+/* Visible state */
 .example-block.open {
   display: block;
 }
 
-/* Code container styling */
+/* Code container */
 .code-block {
   max-width: 580px;
   overflow-x: auto;
@@ -223,7 +233,7 @@
   border-radius: var(--r-sm);
 }
 
-/* Code text formatting */
+/* Code formatting */
 .code-block pre {
   margin: 0;
   padding: 20px 24px;
@@ -236,23 +246,24 @@
   white-space: pre;
 }
 
-/* Syntax highlighting classes */
-.kw  { color: #0D47A1; font-weight: 700; } /* Keywords */
-.cn  { color: #1565C0; }                   /* Class / Names */
-.str { color: #2E7D32; }                   /* Strings */
-.cm  { color: #888; font-style: italic; }  /* Comments */
+/* Syntax highlighting */
+.kw  { color: #0D47A1; font-weight: 700; } /* keywords */
+.cn  { color: #1565C0; }                   /* identifiers / class names */
+.str { color: #2E7D32; }                   /* string literals */
+.cm  { color: #888; font-style: italic; }  /* comments */
 
-/* ---------- RESPONSIVE DESIGN ---------- */
-/* Adjusts layout for tablets and smaller screens */
+/* ---------- RESPONSIVE ----------
+   Adjusts layout for tablets and below
+---------------------------------- */
 @media (max-width: 768px) {
 
-  /* Stack layout vertically */
+  /* Switch to vertical layout */
   .oop-layout {
     flex-direction: column;
     padding: 0 16px;
   }
 
-  /* Convert sidebar into horizontal navigation */
+  /* Sidebar becomes horizontal nav */
   .concept-nav {
     width: 100%;
     position: static;
@@ -273,7 +284,7 @@
     margin-bottom: 6px;
   }
 
-  /* Compact nav items for smaller screens */
+  /* Compact nav items */
   .concept-nav-item {
     margin-bottom: 0;
     padding: 6px 12px;
@@ -284,18 +295,18 @@
     border-radius: var(--r-sm);
   }
 
-  /* Active state adjusted for horizontal layout */
+  /* Active indicator shifts to bottom border */
   .concept-nav-item.active {
     border-left: none;
     border-bottom-color: var(--java-blue);
   }
 
-  /* Adjust main content spacing */
+  /* Adjust content spacing */
   .oop-main {
     padding: 32px 0 60px 0;
   }
 
-  /* Reduce spacing for tighter layout */
+  /* Tighter spacing for smaller screens */
   .concept-section {
     gap: 12px;
   }

@@ -1,20 +1,298 @@
+/* =============================================
+   QUIZ PAGE — quiz.css
+   Styles for the quiz interface, relying on 
+   CSS variables defined in style.css.
+   Focus: clarity, usability, and responsive layout.
+   ============================================= */
 
-
-/* ---------- PAGE LAYOUT ---------- */
-/* Makes body fill full viewport height for sticky footer */
+/* ---------- PAGE LAYOUT ----------
+   Ensures body fills viewport height for sticky footer
+---------------------------------- */
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* Pushes footer down by making the main container grow */
+/* Flex-grow main container so footer stays at bottom */
 .container {
   flex: 1;
 }
 
-/* ---------- HEADER OFFSET ---------- */
-/* Prevents header from hiding behind the fixed navbar */
+/* Offset header to prevent overlap with fixed navbar */
 header {
   margin-top: var(--nav-h);
+}
+
+/* =============================================
+   QUIZ HEADER BANNER
+   ---------------------------------------------
+   Gradient background with subtle grid overlay
+   Text centered, padding for spacing
+   ============================================= */
+.quiz-header {
+  margin-top: var(--nav-h);
+  background: linear-gradient(135deg, var(--java-blue-dark) 0%, var(--java-blue) 60%, var(--java-blue-light) 100%);
+  color: var(--white);
+  text-align: center;
+  padding: 52px 24px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative grid overlay */
+.quiz-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 36px 36px;
+  pointer-events: none;
+}
+
+/* Title and lead text styling */
+.quiz-header h1 {
+  font-family: var(--font);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.quiz-header .lead {
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.82;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0;
+}
+
+/* =============================================
+   QUIZ SECTION CONTAINER
+   ---------------------------------------------
+   Centers content and applies padding for spacing
+   ============================================= */
+.quiz-section {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 24px 72px;
+}
+
+/* =============================================
+   QUESTION CARDS
+   ---------------------------------------------
+   Card layout with gradient accent bar, hover
+   shadow effect, and spacing between cards
+   ============================================= */
+.quiz-card {
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--r-lg);
+  padding: 28px 30px;
+  margin-bottom: 20px;
+  box-shadow: var(--sh-sm);
+  transition: box-shadow var(--ease), border-color var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Accent gradient bar on the left */
+.quiz-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--java-blue), var(--java-blue-light));
+  border-radius: 4px 0 0 4px;
+}
+
+/* Hover feedback for card */
+.quiz-card:hover {
+  box-shadow: var(--sh-md);
+  border-color: var(--gray-400);
+}
+
+/* Question title */
+.quiz-card h5 {
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--java-blue-dark);
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+/* =============================================
+   RADIO OPTIONS
+   ---------------------------------------------
+   Styled for clear selection, hover, and spacing
+   ============================================= */
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.quiz-option {
+  border-radius: var(--r-sm);
+  border: 1.5px solid var(--gray-200);
+  background: var(--gray-50);
+  transition: background var(--ease), border-color var(--ease);
+}
+
+.quiz-option label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Hover state for option row */
+.quiz-option:hover {
+  background: #EEF4FF;
+  border-color: var(--java-blue-light);
+}
+
+.quiz-option:hover label {
+  color: var(--java-blue-dark);
+}
+
+/* Radio button appearance */
+.quiz-option input[type="radio"] {
+  accent-color: var(--java-blue);
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+/* Checked state style */
+.quiz-option input[type="radio"]:checked + span {
+  color: var(--java-blue-dark);
+  font-weight: 600;
+}
+
+/* =============================================
+   SUBMIT BUTTON
+   ---------------------------------------------
+   Centered, rounded, hover lift effect
+   ============================================= */
+.quiz-submit-wrap {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.quiz-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--java-orange);
+  color: var(--white);
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 14px 38px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(244, 81, 30, 0.36);
+  transition: transform var(--ease), box-shadow var(--ease), background var(--ease);
+}
+
+.quiz-submit-btn:hover {
+  background: var(--java-orange-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(244, 81, 30, 0.44);
+}
+
+/* =============================================
+   SCORE RESULT DISPLAY
+   ---------------------------------------------
+   Hidden by default, animated when revealed
+   ============================================= */
+#score {
+  text-align: center;
+  font-family: var(--font);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--java-blue-dark);
+  background: var(--white);
+  border: 2px solid var(--java-blue-light);
+  border-radius: var(--r-lg);
+  padding: 24px 32px;
+  margin: 0 auto 48px;
+  max-width: 440px;
+  display: none;
+  box-shadow: var(--sh-md);
+  animation: fadeSlideUp 0.45s ease both;
+}
+
+#score.visible {
+  display: block;
+}
+
+/* Score message inside result box */
+.score-message {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--gray-600);
+  margin-top: 6px;
+}
+
+/* Retry button */
+.quiz-retry-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  background: transparent;
+  color: var(--java-blue);
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 10px 26px;
+  border-radius: 50px;
+  border: 2px solid var(--java-blue);
+  cursor: pointer;
+  transition: background var(--ease), color var(--ease), transform var(--ease);
+}
+
+.quiz-retry-btn:hover {
+  background: var(--java-blue);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+/* =============================================
+   RESPONSIVE ADJUSTMENTS
+   ---------------------------------------------
+   Optimizes padding and card sizes on small screens
+   ============================================= */
+@media (max-width: 600px) {
+  .quiz-section {
+    padding: 32px 14px 56px;
+  }
+
+  .quiz-card {
+    padding: 20px 18px;
+  }
+
+  .quiz-header {
+    padding: 40px 18px 36px;
+  }
 }

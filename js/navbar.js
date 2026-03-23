@@ -28,7 +28,7 @@
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
         <div class="sidebar-logo">
-          <img src="../assets/logoDark.png" alt="OOP Guide Logo" class="nav-logo" id="sidebarLogo">
+          <img src="../assets/logoLight.png" alt="OOP Guide Logo" class="nav-logo" id="sidebarLogo">
           <span class="sidebar-logo-text">OOP Guide</span>
         </div>
         <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">✕</button>
@@ -63,14 +63,12 @@
           <span></span><span></span><span></span>
         </button>
         <a href="index.html" class="topnav-brand">
-          <img src="../assets/logoDark.png" alt="OOP Guide Logo" class="nav-logo" id="topnavLogo">
+          <img src="../assets/logoLight.png" alt="OOP Guide Logo" class="nav-logo" id="topnavLogo">
           <span class="brand-text">The Guide to Object Oriented Programming</span>
         </a>
       </div>
       <div class="topnav-links"></div>
       <button class="toggle-track" id="darkmodeToggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
-        <span class="icon-sun">☀️</span>
-        <span class="icon-moon">🌙</span>
         <span class="toggle-knob"></span>
       </button>
     </nav>
@@ -88,7 +86,9 @@
 var footerHTML = `
   <footer class="footer">
     <div class="footer-inner">
-      <span class="footer-logo">☕ OOP Guide</span>
+      <span class="footer-logo">
+                <img src="../assets/logoLight.png" alt="OOP Guide Logo" class="nav-logo"> OOP Guide
+</span>
       <span class="footer-credit">No AI tools were used in proposing, designing, coding, or documenting this project.</span>
       <span class="footer-credit">LBYCPG3 | Batiller, Reantaso, Santos, Senario</span>
     </div>
