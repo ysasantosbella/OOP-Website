@@ -2,50 +2,36 @@
 <html lang="en">
 
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Code Output Prediction</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" id="darkmode-style" href="../css/darkmode.css" disabled>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Output Prediction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" id="darkmode-style" href="../css/darkmode.css" disabled>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<div id="navbar-root"></div>
+  <!-- NAVBAR -->
+  <div id="navbar-root"></div>
 
+  <!-- HEADER -->
+  <header class="bg-success text-white text-center p-5">
+    <h1>Code Output Prediction</h1>
+    <p class="lead">Read the code and type the correct output</p>
+  </header>
 
-<!-- HEADER -->
-<header class="bg-success text-white text-center p-5">
+  <section class="container mt-5">
+    <form id="predictForm">
 
-<h1>Code Output Prediction</h1>
-<p class="lead">Read the code and type the correct output</p>
-
-</header>
-
-
-<section class="container mt-5">
-
-<form id="predictForm">
-
-<!-- QUESTION 1 -->
-
-<div class="card mb-4">
-
-<div class="card-body">
-
-<h5>1. What will be printed?</h5>
-
-<pre class="bg-light p-3">
-
+      <!-- QUESTION 1 -->
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5>1. What will be printed?</h5>
+          <pre class="bg-light p-3">
 class Dog {
     void bark(){
         System.out.println("Woof");
@@ -57,26 +43,16 @@ public class Test{
         Dog d = new Dog();
         d.bark();
     }
-}
+}</pre>
+          <input type="text" class="form-control" id="p1" placeholder="Type the output">
+        </div>
+      </div>
 
-</pre>
-
-<input type="text" class="form-control" id="p1" placeholder="Type the output">
-
-</div>
-</div>
-
-
-<!-- QUESTION 2 -->
-
-<div class="card mb-4">
-
-<div class="card-body">
-
-<h5>2. What will be printed?</h5>
-
-<pre class="bg-light p-3">
-
+      <!-- QUESTION 2 -->
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5>2. What will be printed?</h5>
+          <pre class="bg-light p-3">
 class Animal {
     void sound(){
         System.out.println("Animal sound");
@@ -91,116 +67,64 @@ public class Test{
         Dog d = new Dog();
         d.sound();
     }
-}
+}</pre>
+          <input type="text" class="form-control" id="p2" placeholder="Type the output">
+        </div>
+      </div>
 
-</pre>
-
-<input type="text" class="form-control" id="p2" placeholder="Type the output">
-
-</div>
-</div>
-
-
-<!-- QUESTION 3 -->
-
-<div class="card mb-4">
-
-<div class="card-body">
-
-<h5>3. What will be printed?</h5>
-
-<pre class="bg-light p-3">
-
+      <!-- QUESTION 3 -->
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5>3. What will be printed?</h5>
+          <pre class="bg-light p-3">
 class Car {
-
     String brand = "Toyota";
-
 }
 
 public class Test{
-
     public static void main(String[] args){
-
         Car c = new Car();
         System.out.println(c.brand);
-
     }
+}</pre>
+          <input type="text" class="form-control" id="p3" placeholder="Type the output">
+        </div>
+      </div>
 
-}
-
-</pre>
-
-<input type="text" class="form-control" id="p3" placeholder="Type the output">
-
-</div>
-</div>
-
-
-<!-- QUESTION 4 -->
-
-<div class="card mb-4">
-
-<div class="card-body">
-
-<h5>4. What will be printed?</h5>
-
-<pre class="bg-light p-3">
-
+      <!-- QUESTION 4 -->
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5>4. What will be printed?</h5>
+          <pre class="bg-light p-3">
 class MathTest{
-
     int add(int a, int b){
         return a + b;
     }
-
 }
 
 public class Test{
-
     public static void main(String[] args){
-
         MathTest m = new MathTest();
         System.out.println(m.add(3,4));
-
     }
+}</pre>
+        </div>
+        <div class="text-center">
+          <button type="button" class="btn btn-success" onclick="checkPrediction()">Check Answers</button>
+        </div>
+      </div>
 
-}
+    </form>
+    <h3 class="text-center mt-4" id="result"></h3>
+  </section>
 
-</pre>
+  <!-- FOOTER -->
+  <div id="footer-root"></div>
 
-<input type="text" class="form-control" id="p4" placeholder="Type the output">
-
-</div>
-
-<div class="text-center">
-
-<button type="button" class="btn btn-success" onclick="checkPrediction()">Check Answers</button>
-
-</div>
-
-</form>
-
-
-<h3 class="text-center mt-4" id="result"></h3>
-
-</section>
-
-
-<!-- FOOTER -->
-<!-- Contains project logo and credits -->
-<footer class="footer">
-  <div classs="footer-inner">
-    <span class="footer-logo">☕ OOP Guide</span>
-    <span class="footer-credit">No AI tools were used in proposing, designing, coding, or documenting this project.</span>
-    <span class="footer-credit">LBYCPG3 | Batiller, Reantaso, Santos, Senario</span>
-  </div>
-</footer>
-
-
-<script src="../js/bootstrap.bundle.min.js"></script>
-<script src="../js/navbar.js"></script>
-<script src="../js/main.js"></script>
-<script src="../js/codepredict.js"></script>
-<script src="../js/darkmode.js"></script>
+  <script src="../js/bootstrap.bundle.min.js"></script>
+  <script src="../js/navbar.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/codepredict.js"></script>
 
 </body>
 </html>
