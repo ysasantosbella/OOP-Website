@@ -1,15 +1,21 @@
 /* =============================================
    CPG3 OOP GUIDE — darkmode.css
-   Dark theme — high readability
+   Purpose: Defines the dark theme styles for the
+   entire application, prioritizing readability,
+   contrast, and UI consistency across components.
    ============================================= */
 
-/* ---------- BASE ---------- */
+/* ---------- BASE STYLES ----------
+   Applies global dark background and default text color
+---------------------------------- */
 body {
   background: #111827;
   color: #e2e8f0;
 }
 
-/* ---------- NAVBAR ---------- */
+/* ---------- TOP NAVIGATION ----------
+   Styles for the fixed top navigation bar and its elements
+-------------------------------------- */
 .topnav {
   background: #0f172a;
   border-bottom-color: #1e293b;
@@ -18,10 +24,13 @@ body {
 
 .topnav-brand      { color: #e2e8f0; }
 .hamburger span    { background: #94b4d4; }
+
+/* Navigation links (default, hover, active states) */
 .topnav-link       { color: #94b4d4; }
 .topnav-link:hover { background: rgba(148,180,212,0.12); color: #e2e8f0; }
 .topnav-link.active { background: #1d4ed8; color: #ffffff; }
 
+/* Dark mode toggle button */
 .darkmode-btn {
   border-color: #1e293b;
   color: #94b4d4;
@@ -32,86 +41,223 @@ body {
   background: rgba(59,130,246,0.12);
 }
 
-/* ---------- SIDEBAR ---------- */
+/* ---------- SIDEBAR ----------
+   Off-canvas sidebar navigation and overlay
+---------------------------------- */
 .sidebar              { background: #0f172a; }
 .sidebar-header       { border-bottom-color: #1e293b; }
 .sidebar-logo-text    { color: #e2e8f0; }
+
+/* Close button */
 .sidebar-close        { background: rgba(255,255,255,0.08); color: #94b4d4; }
 .sidebar-close:hover  { background: #f4511e; color: #fff; }
+
+/* Sidebar links */
 .sidebar-link         { color: #94b4d4; }
 .sidebar-link:hover   { background: rgba(255,255,255,0.08); color: #e2e8f0; }
 .sidebar-link.active  { background: #1d4ed8; color: #ffffff; }
+
+/* Footer and overlay */
 .sidebar-footer       { border-top-color: #1e293b; }
 .sidebar-footer p     { color: #475569; }
 .sidebar-overlay      { background: rgba(0,0,0,0.65); }
 
-/* ---------- HERO ---------- */
+/* ---------- HERO SECTION ----------
+   Landing section with gradient + grid overlay
+---------------------------------- */
 .hero {
   background: linear-gradient(135deg, #0f172a 0%, #111827 55%, #1c1007 100%);
 }
+
+/* Subtle grid background effect */
 .hero-bg-grid {
   background-image:
     linear-gradient(rgba(59,130,246,0.07) 1px, transparent 1px),
     linear-gradient(90deg, rgba(59,130,246,0.07) 1px, transparent 1px);
 }
+
+/* Hero text styles */
 .hero-badge    { background: #1d4ed8; color: #ffffff; }
 .hero-title    { color: #f1f5f9; }
 .hero-accent   { color: #fb923c; }
 .hero-subtitle { color: #94b4d4; }
 
-/* ---------- FEATURES ---------- */
+/* ---------- FEATURES SECTION ----------
+   Card-based layout for feature highlights
+---------------------------------- */
 .features            { background: #0f172a; }
 .features-eyebrow    { color: #fb923c; }
 .features-title      { color: #f1f5f9; }
 .features-subtitle   { color: #94b4d4; }
 
+/* Feature cards */
 .feature-card            { background: #1e293b; border-color: #334155; }
 .feature-card:hover      { border-color: #3b82f6; box-shadow: 0 8px 28px rgba(0,0,0,0.4); }
 .feature-card-title      { color: #f1f5f9; }
 .feature-card-desc       { color: #94a3b8; }
 .feature-card-cta        { color: #fb923c; }
 
-/* ---------- OOP PAGE ---------- */
+/* ---------- OOP CONTENT PAGE ----------
+   Layout for concept navigation and sections
+---------------------------------- */
+
+/* Side navigation */
 .concept-nav             { border-right-color: #1e293b; }
 .concept-nav-label       { color: #475569; }
 .concept-nav-item        { color: #94a3b8; }
 .concept-nav-item:hover  { background: #1e293b; color: #e2e8f0; }
-.concept-nav-item.active { background: #1e293b; color: #93c5fd; border-left-color: #3b82f6; }
+.concept-nav-item.active {
+  background: #1e293b;
+  color: #93c5fd;
+  border-left-color: #3b82f6;
+}
 
+/* Page header */
 .oop-page-header         { border-bottom-color: #1e293b; }
 .oop-page-title          { color: #f1f5f9; }
 .oop-page-subtitle       { color: #94a3b8; }
 
+/* Concept sections */
 .concept-section         { border-bottom-color: #1e293b; }
 .concept-number          { color: #334155; }
 .concept-title           { color: #f1f5f9; }
 .concept-desc            { color: #94a3b8; }
 
+/* Expand/collapse button */
 .show-btn                { color: #60a5fa; }
 .show-btn:hover          { color: #fb923c; }
 
-/* Code block — light bg swapped for dark, text stays readable */
+/* Code block styling (dark mode adaptation) */
 .code-block {
   background: #1e293b;
   border-color: #334155;
   border-left-color: #3b82f6;
 }
 .code-block pre { color: #e2e8f0; }
-.kw  { color: #93c5fd; }
-.cn  { color: #7dd3fc; }
-.str { color: #86efac; }
-.cm  { color: #64748b; }
 
-/* ---------- TOGGLE SWITCH (dark state) ---------- */
+/* Syntax highlighting */
+.kw  { color: #93c5fd; }   /* keywords */
+.cn  { color: #7dd3fc; }   /* class names */
+.str { color: #86efac; }   /* strings */
+.cm  { color: #64748b; }   /* comments */
+
+/* ---------- TOGGLE SWITCH ----------
+   Dark mode state for toggle component
+---------------------------------- */
 .toggle-track        { background: #1a1a1a; }
 .toggle-track .icon-sun  { opacity: 0.35; }
 .toggle-track .icon-moon { opacity: 1; }
+
+/* Knob shifts right when dark mode is active */
 .toggle-track .toggle-knob {
   transform: translateX(32px);
   background: #f0f0f0;
 }
 
-/* ---------- FOOTER ---------- */
+/* ---------- FOOTER ----------
+   Footer styling consistent with dark theme
+---------------------------------- */
 .footer        { background: #0f172a; }
 .footer-logo   { color: #e2e8f0; }
 .footer-credit { color: #475569; }
+
+/* =============================================
+   QUIZ PAGE — Dark Mode Overrides
+   Overrides specific components used in quiz UI
+   ============================================= */
+
+/* Header banner with gradient + grid overlay */
+.quiz-header {
+  background: linear-gradient(135deg, #0a1628 0%, #0f1f3d 60%, #162444 100%);
+}
+
+.quiz-header::before {
+  background-image:
+    linear-gradient(rgba(99,149,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99,149,255,0.06) 1px, transparent 1px);
+}
+
+.quiz-header h1   { color: #f1f5f9; }
+.quiz-header .lead { color: #93b4d8; }
+
+/* Question cards */
+.quiz-card {
+  background: #1a2540;
+  border-color: #243050;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.35);
+}
+
+/* Decorative accent bar */
+.quiz-card::before {
+  background: linear-gradient(180deg, #3b82f6, #60a5fa);
+}
+
+.quiz-card:hover {
+  border-color: #3b5998;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.45);
+}
+
+.quiz-card h5 { color: #bfd4f5; }
+
+/* Answer options */
+.quiz-option {
+  background: #111827;
+  border-color: #243050;
+}
+
+.quiz-option label {
+  color: #8ba8cc;
+}
+
+.quiz-option:hover {
+  background: #1a2f52;
+  border-color: #3b82f6;
+}
+
+.quiz-option:hover label {
+  color: #c7dcf8;
+}
+
+/* Radio button styling */
+.quiz-option input[type="radio"] {
+  accent-color: #60a5fa;
+}
+
+.quiz-option input[type="radio"]:checked + span {
+  color: #bfd4f5;
+}
+
+/* Submit button (accent color retained) */
+.quiz-submit-btn {
+  background: #f4511e;
+  box-shadow: 0 6px 24px rgba(244,81,30,0.28);
+}
+
+.quiz-submit-btn:hover {
+  background: #d84315;
+  box-shadow: 0 12px 36px rgba(244,81,30,0.38);
+}
+
+/* Score/result container */
+#score {
+  background: #1a2540;
+  border-color: #2a4a8a;
+  color: #bfd4f5;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.4);
+}
+
+.score-message {
+  color: #7a9cc4;
+}
+
+/* Retry button */
+.quiz-retry-btn {
+  color: #60a5fa;
+  border-color: #2a4a8a;
+}
+
+.quiz-retry-btn:hover {
+  background: #1d4ed8;
+  color: #ffffff;
+  border-color: #1d4ed8;
+}

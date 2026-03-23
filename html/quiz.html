@@ -2,10 +2,8 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Quiz</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,124 +13,97 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/quiz.css">
   <link rel="stylesheet" id="darkmode-style" href="../css/darkmode.css" disabled>
-
+  <link rel="icon" type="image/png" href="assets/logoDark.png">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<!-- The navigation bar is injected here using navbar.js -->
-<div id="navbar-root"></div>
+  <!-- NAVBAR -->
+  <div id="navbar-root"></div>
 
+  <!-- HEADER -->
+  <header class="quiz-header">
+    <h1>Practice Quiz</h1>
+    <p class="lead">Test your knowledge of Object-Oriented Programming</p>
+  </header>
 
-<!-- HEADER -->
-<header class="bg-primary text-white text-center p-5">
+  <!-- QUIZ -->
+  <section class="quiz-section">
 
-  <h1>Practice Quiz</h1>
-  <p class="lead">Test your knowledge of Object-Oriented Programming</p>
+    <form id="quizForm">
 
-</header>
-
-
-<!-- QUIZ -->
-<section class="container mt-5">
-
-  <form id="quizForm">
-
-    <!-- Q1 -->
-    <div class="card mb-3">
-      <div class="card-body">
+      <!-- Q1 -->
+      <div class="quiz-card">
         <h5>1. What is a class in Object-Oriented Programming?</h5>
-
-        <input type="radio" name="q1" value="a"> A variable<br>
-        <input type="radio" name="q1" value="b"> A blueprint for creating objects<br>
-        <input type="radio" name="q1" value="c"> A loop structure
-
+        <ul class="quiz-options">
+          <li class="quiz-option"><label><input type="radio" name="q1" value="a"><span>A variable</span></label></li>
+          <li class="quiz-option"><label><input type="radio" name="q1" value="b"><span>A blueprint for creating objects</span></label></li>
+          <li class="quiz-option"><label><input type="radio" name="q1" value="c"><span>A loop structure</span></label></li>
+        </ul>
       </div>
-    </div>
 
-
-    <!-- Q2 -->
-    <div class="card mb-3">
-      <div class="card-body">
+      <!-- Q2 -->
+      <div class="quiz-card">
         <h5>2. What is an object?</h5>
-
-        <input type="radio" name="q2" value="a"> An instance of a class<br>
-        <input type="radio" name="q2" value="b"> A method<br>
-        <input type="radio" name="q2" value="c"> A loop
-
+        <ul class="quiz-options">
+          <li class="quiz-option"><label><input type="radio" name="q2" value="a"><span>An instance of a class</span></label></li>
+          <li class="quiz-option"><label><input type="radio" name="q2" value="b"><span>A method</span></label></li>
+          <li class="quiz-option"><label><input type="radio" name="q2" value="c"><span>A loop</span></label></li>
+        </ul>
       </div>
-    </div>
 
-
-    <!-- Q3 -->
-    <div class="card mb-3">
-      <div class="card-body">
+      <!-- Q3 -->
+      <div class="quiz-card">
         <h5>3. What does a class define?</h5>
-
-        <input type="radio" name="q3" value="a"> Variables and methods<br>
-        <input type="radio" name="q3" value="b"> Loops only<br>
-        <input type="radio" name="q3" value="c"> HTML elements
-
+        <ul class="quiz-options">
+          <li class="quiz-option"><label><input type="radio" name="q3" value="a"><span>Variables and methods</span></label></li>
+          <li class="quiz-option"><label><input type="radio" name="q3" value="b"><span>Loops only</span></label></li>
+          <li class="quiz-option"><label><input type="radio" name="q3" value="c"><span>HTML elements</span></label></li>
+        </ul>
       </div>
-    </div>
 
-
-    <!-- Q4 -->
-    <div class="card mb-3">
-      <div class="card-body">
+      <!-- Q4 -->
+      <div class="quiz-card">
         <h5>4. Which concept allows one class to inherit another class's properties?</h5>
-
-        <input type="radio" name="q4" value="a"> Encapsulation<br>
-        <input type="radio" name="q4" value="b"> Inheritance<br>
-        <input type="radio" name="q4" value="c"> Object
-
+        <ul class="quiz-options">
+          <li class="quiz-option"><label><input type="radio" name="q4" value="a"><span>Encapsulation</span></label></li>
+          <li class="quiz-option"><label><input type="radio" name="q4" value="b"><span>Inheritance</span></label></li>
+          <li class="quiz-option"><label><input type="radio" name="q4" value="c"><span>Object</span></label></li>
+        </ul>
       </div>
-    </div>
 
-
-    <!-- Q5 -->
-    <div class="card mb-3">
-      <div class="card-body">
+      <!-- Q5 -->
+      <div class="quiz-card">
         <h5>5. In the example "Dog extends Animal", what does this mean?</h5>
-
-        <input type="radio" name="q5" value="a"> Dog inherits from Animal<br>
-        <input type="radio" name="q5" value="b"> Dog deletes Animal<br>
-        <input type="radio" name="q5" value="c"> Dog replaces Animal
-
+        <ul class="quiz-options">
+          <li class="quiz-option"><label><input type="radio" name="q5" value="a"><span>Dog inherits from Animal</span></label></li>
+          <li class="quiz-option"><label><input type="radio" name="q5" value="b"><span>Dog deletes Animal</span></label></li>
+          <li class="quiz-option"><label><input type="radio" name="q5" value="c"><span>Dog replaces Animal</span></label></li>
+        </ul>
       </div>
-    </div>
 
-
-    <!-- Q6 -->
-    <div class="card mb-3">
-      <div class="card-body">
+      <!-- Q6 -->
+      <div class="quiz-card">
         <h5>6. What is encapsulation?</h5>
-
-        <input type="radio" name="q6" value="a"> Hiding internal data<br>
-        <input type="radio" name="q6" value="b"> Repeating loops<br>
-        <input type="radio" name="q6" value="c"> Creating objects
-
+        <ul class="quiz-options">
+          <li class="quiz-option"><label><input type="radio" name="q6" value="a"><span>Hiding internal data</span></label></li>
+          <li class="quiz-option"><label><input type="radio" name="q6" value="b"><span>Repeating loops</span></label></li>
+          <li class="quiz-option"><label><input type="radio" name="q6" value="c"><span>Creating objects</span></label></li>
+        </ul>
       </div>
-    </div>
 
-
-    <!-- Q7 -->
-    <div class="card mb-3">
-      <div class="card-body">
+      <!-- Q7 -->
+      <div class="quiz-card">
         <h5>7. Why do we use private variables?</h5>
-
-        <input type="radio" name="q7" value="a"> To hide internal data<br>
-        <input type="radio" name="q7" value="b"> To speed up loops<br>
-        <input type="radio" name="q7" value="c"> To delete data
-
+        <ul class="quiz-options">
+          <li class="quiz-option"><label><input type="radio" name="q7" value="a"><span>To hide internal data</span></label></li>
+          <li class="quiz-option"><label><input type="radio" name="q7" value="b"><span>To speed up loops</span></label></li>
+          <li class="quiz-option"><label><input type="radio" name="q7" value="c"><span>To delete data</span></label></li>
+        </ul>
       </div>
-    </div>
 
-
-    <!-- Q8 -->
-    <div class="card mb-3">
-      <div class="card-body">
+      <!-- Q8 -->
+      <div class="quiz-card">
         <h5>8. How can private data be accessed?</h5>
 
         <input type="radio" name="q8" value="a"> Through public methods<br>
@@ -142,30 +113,24 @@
       </div>
     </div>
 
-    
-    <div class="text-center mb-5">
+          <div class="quiz-submit-wrap">
+        <button type="button" class="quiz-submit-btn" onclick="checkQuiz()">Submit Quiz</button>
+      </div>
 
-      <button type="button" class="btn btn-primary" onclick="checkQuiz()">Submit Quiz</button>
+    </form>
 
+    <div id="score"></div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">☕ OOP Guide</span>
+      <span class="footer-credit">No AI tools were used in proposing, designing, coding, or documenting this project.</span>
+      <span class="footer-credit">LBYCPG3 | Batiller, Reantaso, Santos, Senario</span>
     </div>
-
-  </form>
-
-  <h3 class="text-center mt-4" id="score"></h3>
-
-</section>
-
-
-<!-- FOOTER -->
-<!-- Contains project logo and credits -->
-<footer class="footer">
-  <div class="footer-inner">
-    <span class="footer-logo">☕ OOP Guide</span>
-    <span class="footer-credit">No AI tools were used in proposing, designing, coding, or documenting this project.</span>
-    <span class="footer-credit">LBYCPG3 | Batiller, Reantaso, Santos, Senario</span>
-  </div>
-</footer>
-
+  </footer>
 
 <script src="../js/bootstrap.bundle.min.js"></script>
 <script src="../js/navbar.js"></script>

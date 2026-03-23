@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Drag & Drop Code Builder</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
@@ -15,56 +11,47 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/dragdrop.css">
     <link rel="stylesheet" id="darkmode-style" href="../css/darkmode.css" disabled>
-
+    <link rel="icon" type="image/png" href="assets/logoDark.png">
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-<!-- The navigation bar is injected here using navbar.js -->
-<div id="navbar-root"></div>
+    <div id="navbar-root"></div>
 
-    <header class="bg-primary text-white text-center p-5">
-        <h1>Drag & Drop Code Builder</h1>
-        <p>Arrange the code to form the correct Java program</p>
-    </header>
+    <div class="activity-container">
+        <header class="activity-header text-center">
+            <h1 class="oop-page-title">Drag & Drop Code Builder</h1>
+            <p class="oop-page-subtitle">Arrange the code to form the correct Java program.</p>
+        </header>
 
+        <main class="activity-content">
+            <section class="activity-card">
+                <h4 class="section-label">Select OOP Concept</h4>
+                <select id="conceptSelect" class="bubble-select" onchange="loadActivity()">
+                    <option value="class">Class</option>
+                    <option value="object">Object</option>
+                    <option value="inheritance">Inheritance</option>
+                    <option value="encapsulation">Encapsulation</option>
+                </select>
+            </section>
 
-    <div class="container mt-5">
+            <section class="activity-card">
+                <h4 class="section-label">Arrange the Code</h4>
+                <div id="code-container" class="list-group"></div>
 
-        <h4>Select OOP Concept</h4>
-
-        <select id="conceptSelect" class="form-select mb-4" onchange="loadActivity()">
-
-            <option value="class">Class</option>
-            <option value="object">Object</option>
-            <option value="inheritance">Inheritance</option>
-            <option value="encapsulation">Encapsulation</option>
-
-        </select>
-
-
-        <div id="code-container" class="list-group"></div>
-
-        <br>
-
-        <button class="btn btn-success" onclick="checkOrder()">Check Answer</button>
-
-        <p id="result" class="mt-3 mb-5"></p>
-
+                <div class="action-footer text-center">
+                    <button class="bubble-btn" onclick="checkOrder()">Check Answer</button>
+                    <p id="result" class="mt-4"></p>
+                </div>
+            </section>
+        </main>
     </div>
 
-
-<div id="footer-root"></div>
-
-
+    <div id="footer-root"></div>
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="../js/navbar.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/dragdrop.js"></script>
     <script src="../js/darkmode.js"></script>
-
 </body>
-
 </html>
