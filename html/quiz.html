@@ -3,68 +3,33 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Quiz</title>
+  <title>Quiz</title>
 
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="../css/style.css">
-<link id="darkmode-style" rel="stylesheet" href="../css/darkmode.css" disabled>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/quiz.css">
+  <link rel="stylesheet" id="darkmode-style" href="../css/darkmode.css" disabled>
 
 </head>
 
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
-<div class="container">
-
-<a class="navbar-brand" href="#">The Guide to Object Oriented Programming</a>
-
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-<span class="navbar-toggler-icon"></span>
-</button>
-
-<div class="collapse navbar-collapse" id="navMenu">
-
-<ul class="navbar-nav ms-auto">
-
-<li class="nav-item">
-<a class="nav-link" href="index.html">Home</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="oop.html">OOP Concepts</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link active" href="quiz.html">Practice Quiz</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="dragdrop.html">Code Builder</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="codepredict.html">Code Prediction</a>
-</li>
-
-</ul>
-
-<button class="btn btn-outline-light ms-3" onclick="toggleDarkMode()">Dark Mode</button>
-
-</div>
-</div>
-</nav>
+<!-- The navigation bar is injected here using navbar.js -->
+<div id="navbar-root"></div>
 
 
 <!-- HEADER -->
 <header class="bg-primary text-white text-center p-5">
 
-<h1>Practice Quiz</h1>
-<p class="lead">Test your knowledge of Object-Oriented Programming</p>
+  <h1>Practice Quiz</h1>
+  <p class="lead">Test your knowledge of Object-Oriented Programming</p>
 
 </header>
 
@@ -72,135 +37,139 @@
 <!-- QUIZ -->
 <section class="container mt-5">
 
-<form id="quizForm">
+  <form id="quizForm">
 
-<!-- Q1 -->
-<div class="card mb-3">
-<div class="card-body">
-<h5>1. What is a class in Object-Oriented Programming?</h5>
+    <!-- Q1 -->
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5>1. What is a class in Object-Oriented Programming?</h5>
 
-<input type="radio" name="q1" value="a"> A variable<br>
-<input type="radio" name="q1" value="b"> A blueprint for creating objects<br>
-<input type="radio" name="q1" value="c"> A loop structure
+        <input type="radio" name="q1" value="a"> A variable<br>
+        <input type="radio" name="q1" value="b"> A blueprint for creating objects<br>
+        <input type="radio" name="q1" value="c"> A loop structure
 
-</div>
-</div>
-
-
-<!-- Q2 -->
-<div class="card mb-3">
-<div class="card-body">
-<h5>2. What is an object?</h5>
-
-<input type="radio" name="q2" value="a"> An instance of a class<br>
-<input type="radio" name="q2" value="b"> A method<br>
-<input type="radio" name="q2" value="c"> A loop
-
-</div>
-</div>
+      </div>
+    </div>
 
 
-<!-- Q3 -->
-<div class="card mb-3">
-<div class="card-body">
-<h5>3. What does a class define?</h5>
+    <!-- Q2 -->
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5>2. What is an object?</h5>
 
-<input type="radio" name="q3" value="a"> Variables and methods<br>
-<input type="radio" name="q3" value="b"> Loops only<br>
-<input type="radio" name="q3" value="c"> HTML elements
+        <input type="radio" name="q2" value="a"> An instance of a class<br>
+        <input type="radio" name="q2" value="b"> A method<br>
+        <input type="radio" name="q2" value="c"> A loop
 
-</div>
-</div>
-
-
-<!-- Q4 -->
-<div class="card mb-3">
-<div class="card-body">
-<h5>4. Which concept allows one class to inherit another class's properties?</h5>
-
-<input type="radio" name="q4" value="a"> Encapsulation<br>
-<input type="radio" name="q4" value="b"> Inheritance<br>
-<input type="radio" name="q4" value="c"> Object
-
-</div>
-</div>
+      </div>
+    </div>
 
 
-<!-- Q5 -->
-<div class="card mb-3">
-<div class="card-body">
-<h5>5. In the example "Dog extends Animal", what does this mean?</h5>
+    <!-- Q3 -->
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5>3. What does a class define?</h5>
 
-<input type="radio" name="q5" value="a"> Dog inherits from Animal<br>
-<input type="radio" name="q5" value="b"> Dog deletes Animal<br>
-<input type="radio" name="q5" value="c"> Dog replaces Animal
+        <input type="radio" name="q3" value="a"> Variables and methods<br>
+        <input type="radio" name="q3" value="b"> Loops only<br>
+        <input type="radio" name="q3" value="c"> HTML elements
 
-</div>
-</div>
-
-
-<!-- Q6 -->
-<div class="card mb-3">
-<div class="card-body">
-<h5>6. What is encapsulation?</h5>
-
-<input type="radio" name="q6" value="a"> Hiding internal data<br>
-<input type="radio" name="q6" value="b"> Repeating loops<br>
-<input type="radio" name="q6" value="c"> Creating objects
-
-</div>
-</div>
+      </div>
+    </div>
 
 
-<!-- Q7 -->
-<div class="card mb-3">
-<div class="card-body">
-<h5>7. Why do we use private variables?</h5>
+    <!-- Q4 -->
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5>4. Which concept allows one class to inherit another class's properties?</h5>
 
-<input type="radio" name="q7" value="a"> To hide internal data<br>
-<input type="radio" name="q7" value="b"> To speed up loops<br>
-<input type="radio" name="q7" value="c"> To delete data
+        <input type="radio" name="q4" value="a"> Encapsulation<br>
+        <input type="radio" name="q4" value="b"> Inheritance<br>
+        <input type="radio" name="q4" value="c"> Object
 
-</div>
-</div>
-
-
-<!-- Q8 -->
-<div class="card mb-3">
-<div class="card-body">
-<h5>8. How can private data be accessed?</h5>
-
-<input type="radio" name="q8" value="a"> Through public methods<br>
-<input type="radio" name="q8" value="b"> Direct access<br>
-<input type="radio" name="q8" value="c"> HTML tags
-
-</div>
-</div>
+      </div>
+    </div>
 
 
-<div class="text-center">
+    <!-- Q5 -->
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5>5. In the example "Dog extends Animal", what does this mean?</h5>
 
-<button type="button" class="btn btn-primary" onclick="checkQuiz()">Submit Quiz</button>
+        <input type="radio" name="q5" value="a"> Dog inherits from Animal<br>
+        <input type="radio" name="q5" value="b"> Dog deletes Animal<br>
+        <input type="radio" name="q5" value="c"> Dog replaces Animal
 
-</div>
+      </div>
+    </div>
 
-</form>
 
-<h3 class="text-center mt-4" id="score"></h3>
+    <!-- Q6 -->
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5>6. What is encapsulation?</h5>
+
+        <input type="radio" name="q6" value="a"> Hiding internal data<br>
+        <input type="radio" name="q6" value="b"> Repeating loops<br>
+        <input type="radio" name="q6" value="c"> Creating objects
+
+      </div>
+    </div>
+
+
+    <!-- Q7 -->
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5>7. Why do we use private variables?</h5>
+
+        <input type="radio" name="q7" value="a"> To hide internal data<br>
+        <input type="radio" name="q7" value="b"> To speed up loops<br>
+        <input type="radio" name="q7" value="c"> To delete data
+
+      </div>
+    </div>
+
+
+    <!-- Q8 -->
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5>8. How can private data be accessed?</h5>
+
+        <input type="radio" name="q8" value="a"> Through public methods<br>
+        <input type="radio" name="q8" value="b"> Direct access<br>
+        <input type="radio" name="q8" value="c"> HTML tags
+
+      </div>
+    </div>
+
+
+    <div class="text-center mb-5">
+
+      <button type="button" class="btn btn-primary" onclick="checkQuiz()">Submit Quiz</button>
+
+    </div>
+
+  </form>
+
+  <h3 class="text-center mt-4" id="score"></h3>
 
 </section>
 
 
 <!-- FOOTER -->
-<footer class="bg-dark text-white text-center p-3 mt-5">
-
-<p>We certify that no AI tools were used in proposing, designing, coding, or documenting this project.</p>
-<p>LBYCPG3 | Batiller, Reantaso, Santos, Senario</p>
-
+<!-- Contains project logo and credits -->
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-logo">☕ OOP Guide</span>
+    <span class="footer-credit">No AI tools were used in proposing, designing, coding, or documenting this project.</span>
+    <span class="footer-credit">LBYCPG3 | Batiller, Reantaso, Santos, Senario</span>
+  </div>
 </footer>
 
 
 <script src="../js/bootstrap.bundle.min.js"></script>
+<script src="../js/navbar.js"></script>
+<script src="../js/main.js"></script>
 <script src="../js/quiz.js"></script>
 <script src="../js/darkmode.js"></script>
 

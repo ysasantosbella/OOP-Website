@@ -8,56 +8,19 @@
 
 <title>Code Output Prediction</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="../css/style.css">
-<link id="darkmode-style" rel="stylesheet" href="../css/darkmode.css" disabled>
+<link rel="stylesheet" id="darkmode-style" href="../css/darkmode.css" disabled>
 
 </head>
 
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
-<div class="container">
-
-<a class="navbar-brand" href="#">OOP Learning Guide</a>
-
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-<span class="navbar-toggler-icon"></span>
-</button>
-
-<div class="collapse navbar-collapse" id="navMenu">
-
-<ul class="navbar-nav ms-auto">
-
-<li class="nav-item">
-<a class="nav-link" href="index.html">Home</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="oop.html">OOP Concepts</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="quiz.html">Practice Quiz</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link" href="dragdrop.html">Code Builder</a>
-</li>
-
-<li class="nav-item">
-<a class="nav-link active" href="codepredict.html">Code Prediction</a>
-</li>
-
-</ul>
-
-<button class="btn btn-outline-light ms-3" onclick="toggleDarkMode()">Dark Mode</button>
-
-</div>
-</div>
-</nav>
+<div id="navbar-root"></div>
 
 
 <!-- HEADER -->
@@ -207,8 +170,6 @@ public class Test{
 <input type="text" class="form-control" id="p4" placeholder="Type the output">
 
 </div>
-</div>
-
 
 <div class="text-center">
 
@@ -225,15 +186,19 @@ public class Test{
 
 
 <!-- FOOTER -->
-
-<footer class="bg-dark text-white text-center p-3 mt-5">
-
-<p>LBYCPG3 | Batiller, Reantaso, Santos, Senario</p>
-
+<!-- Contains project logo and credits -->
+<footer class="footer">
+  <div classs="footer-inner">
+    <span class="footer-logo">☕ OOP Guide</span>
+    <span class="footer-credit">No AI tools were used in proposing, designing, coding, or documenting this project.</span>
+    <span class="footer-credit">LBYCPG3 | Batiller, Reantaso, Santos, Senario</span>
+  </div>
 </footer>
 
 
 <script src="../js/bootstrap.bundle.min.js"></script>
+<script src="../js/navbar.js"></script>
+<script src="../js/main.js"></script>
 <script src="../js/codepredict.js"></script>
 <script src="../js/darkmode.js"></script>
 
