@@ -1,0 +1,25 @@
+/* =============================================
+   DRAG & DROP PAGE — dragdrop.css
+   Layout Structure:
+   - Sticky navbar offset for fixed topnav
+   - Flex body to keep footer at bottom
+   ============================================= */
+
+/* ---------- PAGE LAYOUT ---------- */
+/* Makes body fill full viewport height for sticky footer */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Pushes footer down by making the main container grow */
+.container {
+  flex: 1;
+}
+
+/* ---------- HEADER OFFSET ---------- */
+/* Prevents header from hiding behind the fixed navbar */
+header {
+  margin-top: var(--nav-h);
+}
