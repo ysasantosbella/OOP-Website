@@ -28,41 +28,38 @@ q9: "To act as a blueprint for objects",
 q10: "An instance of a class"
 };
 
+let reviewHTML = "<h4 class='text-center mb-4'>Answer Review</h4>";
+
 for(let i = 1; i <= 10; i++){
 
 let selected = document.querySelector('input[name="q'+i+'"]:checked');
-let question = document.querySelector('input[name="q'+i+'"]');
 
-// remove old feedback
-let old = question.parentElement.querySelector(".feedback");
-if(old){
-old.remove();
-}
-
-let feedback = document.createElement("p");
-feedback.className = "feedback";
-
-if(selected){
-if(selected.value === answers["q"+i]){
+if(selected && selected.value === answers["q"+i]){
 score++;
-feedback.innerHTML = "Correct";
-feedback.style.color = "green";
+reviewHTML += `
+<div style="color:green; margin-bottom:10px;">
+Q${i}: Correct
+</div>
+`;
 }
 else{
-feedback.innerHTML = "Wrong. Correct answer: " + correctText["q"+i];
-feedback.style.color = "red";
+reviewHTML += `
+<div style="color:red; margin-bottom:10px;">
+Q${i}: Wrong — Correct answer: ${correctText["q"+i]}
+</div>
+`;
 }
-}
-else{
-feedback.innerHTML = "No answer selected. Correct answer: " + correctText["q"+i];
-feedback.style.color = "red";
-}
-
-question.parentElement.appendChild(feedback);
 
 }
 
 document.getElementById("score").innerHTML =
 "Your Score: " + score + " / 10";
+
+document.getElementById("review").innerHTML = reviewHTML;
+
+
+document.getElementById("review").scrollIntoView({
+behavior: "smooth"
+});
 
 }
