@@ -1,30 +1,53 @@
-function checkPrediction(){
+document.addEventListener('DOMContentLoaded', () => {
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
 
-let score = 0;
+    if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark-mode');
+        if (darkModeToggle) darkModeToggle.checked = true;
+    }
 
-let a1 = document.getElementById("p1").value.trim().toLowerCase();
-let a2 = document.getElementById("p2").value.trim().toLowerCase();
-let a3 = document.getElementById("p3").value.trim().toLowerCase();
-let a4 = document.getElementById("p4").value.trim().toLowerCase();
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    }
+});
 
+function checkPrediction() {
+    let score = 0;
+    const answers = {
+        p1: "woof",
+        p2: "animal sound",
+        p3: "toyota",
+        p4: "7"
+    };
 
-if(a1 === "woof"){
-score++;
-}
+    for (let id in answers) {
+        const input = document.getElementById(id);
+        if (input) {
+            const val = input.value.trim().toLowerCase();
+            if (val === answers[id]) {
+                score++;
+                input.style.borderColor = "#28a745";
+            } else {
+                input.style.borderColor = "#dc3545";
+            }
+        }
+    }
 
-if(a2 === "animal sound"){
-score++;
-}
+    const scoreDiv = document.getElementById("score");
+    const scoreText = document.getElementById("scoreText");
 
-if(a3 === "toyota"){
-score++;
-}
-
-if(a4 === "7"){
-score++;
-}
-
-document.getElementById("result").innerHTML =
-"Your Score: " + score + " / 4";
-
+    if (scoreDiv && scoreText) {
+        scoreText.innerHTML = `Your Score: ${score} / 4`;
+        scoreDiv.classList.add("visible");
+        scoreDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
 }

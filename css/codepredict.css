@@ -1,0 +1,90 @@
+:root {
+  --nav-h: 80px; 
+  --java-blue-dark: #0d1b2a;
+  --java-blue: #007bff;
+  --java-blue-light: #e7f1ff;
+  --java-orange: #f4511e;
+  --java-orange-dark: #d84315;
+  --white: #ffffff;
+  --gray-50: #f8fafc;
+  --gray-200: #e2e8f0;
+  --gray-600: #475569;
+}
+
+/* --- LIGHT MODE (Default) --- */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--gray-50);
+  color: var(--gray-600);
+  font-family: 'Sora', sans-serif;
+  margin: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.quiz-header {
+  margin-top: var(--nav-h);
+  background: linear-gradient(135deg, var(--java-blue-dark) 0%, var(--java-blue) 60%, var(--java-blue-light) 100%);
+  color: white !important;
+  text-align: center;
+  padding: 60px 24px;
+  position: relative;
+}
+
+.quiz-card {
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.quiz-card h5 {
+  color: var(--java-blue-dark) !important;
+  font-weight: 700;
+}
+
+pre.bg-light {
+  background-color: #f1f5f9 !important;
+  color: #1e293b !important;
+  border-left: 4px solid var(--java-blue);
+  padding: 20px !important;
+}
+
+/* --- DARK MODE STYLES --- */
+/* Gagana lang ito kapag ang <body> ay may class na 'dark-mode' */
+
+body.dark-mode {
+  background-color: #0f172a !important; /* Dark blue-black background */
+  color: #e2e8f0 !important;
+}
+
+body.dark-mode .quiz-card {
+  background-color: #1e293b !important; /* Darker blue card */
+  border-color: #334155 !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .quiz-card h5 {
+  color: #38bdf8 !important; /* Light blue text for the title */
+}
+
+body.dark-mode pre.bg-light {
+  background-color: #0f172a !important; /* Inside the code block */
+  color: #94a3b8 !important; /* Light gray code text */
+  border-color: #38bdf8;
+}
+
+body.dark-mode .form-control {
+  background-color: #1e293b;
+  border-color: #334155;
+  color: white;
+}
+
+body.dark-mode #score {
+  background-color: #1e293b;
+  border-color: #38bdf8;
+  color: white;
+}
