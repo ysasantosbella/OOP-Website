@@ -31,19 +31,18 @@ q10: "An instance of a class"
 for(let i = 1; i <= 10; i++){
 
 let selected = document.querySelector('input[name="q'+i+'"]:checked');
-let questionDiv = document.querySelector('input[name="q'+i+'"]').closest('.card-body');
+let question = document.querySelector('input[name="q'+i+'"]');
 
-// remove old feedback if re-submit
-let oldFeedback = questionDiv.querySelector(".feedback");
-if(oldFeedback){
-oldFeedback.remove();
+// remove old feedback
+let old = question.parentElement.querySelector(".feedback");
+if(old){
+old.remove();
 }
 
 let feedback = document.createElement("p");
-feedback.classList.add("feedback");
+feedback.className = "feedback";
 
 if(selected){
-
 if(selected.value === answers["q"+i]){
 score++;
 feedback.innerHTML = "Correct";
@@ -53,30 +52,17 @@ else{
 feedback.innerHTML = "Wrong. Correct answer: " + correctText["q"+i];
 feedback.style.color = "red";
 }
-
 }
 else{
 feedback.innerHTML = "No answer selected. Correct answer: " + correctText["q"+i];
 feedback.style.color = "red";
 }
 
-questionDiv.appendChild(feedback);
+question.parentElement.appendChild(feedback);
 
-}
-
-let message = "";
-
-if(score === 10){
-message = "Excellent! You mastered OOP concepts.";
-}
-else if(score >= 6){
-message = "Good job! You understand most concepts.";
-}
-else{
-message = "Review the OOP concepts again.";
 }
 
 document.getElementById("score").innerHTML =
-"Your Score: " + score + " / 10<br>" + message;
+"Your Score: " + score + " / 10";
 
 }
