@@ -238,12 +238,12 @@ body {
   box-shadow: 0 12px 36px rgba(244,81,30,0.38);
 }
 
-/* Score/result container */
+/* Score/result container — FIXED */
 #score {
-  background: #1a2540;
-  border-color: #2a4a8a;
-  color: #bfd4f5;
-  box-shadow: 0 8px 28px rgba(0,0,0,0.4);
+  background: #1a2540 !important;
+  border: 2px solid #2a4a8a !important;
+  color: #bfd4f5 !important;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.4) !important;
 }
 
 .score-message {
@@ -261,3 +261,51 @@ body {
   color: #ffffff;
   border-color: #1d4ed8;
 }
+
+/* Banner header (OOP page) */
+.oop-banner-header {
+  background: linear-gradient(135deg, #0a1628 0%, #0f1f3d 60%, #162444 100%);
+}
+
+.oop-banner-header::before {
+  background-image:
+    linear-gradient(rgba(99,149,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99,149,255,0.06) 1px, transparent 1px);
+}
+
+.oop-banner-header h1   { color: #f1f5f9; }
+.oop-banner-header .lead { color: #93b4d8; }
+
+/* =============================================
+   DRAG & DROP PAGE — Dark Mode Overrides
+   ============================================= */
+
+body                          { background-color: #0f172a; }
+
+.activity-header              { border-bottom-color: #1e293b; }
+.oop-page-title               { color: #f1f5f9; }
+.oop-page-subtitle            { color: #94a3b8; }
+
+.activity-card {
+  background: #1a2540;
+  border-color: #243050;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.35);
+}
+
+.section-label                { color: #60a5fa; }
+
+.list-group-item {
+  background: #111827 !important;
+  border-color: #243050;
+  color: #e2e8f0 !important;
+}
+
+.list-group-item:hover        { border-color: #3b82f6; }
+
+.bubble-select {
+  background-color: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+#result                       { color: #93c5fd; }

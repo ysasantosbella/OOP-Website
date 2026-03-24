@@ -61,7 +61,41 @@ public class Test{
         <input type="text" class="prediction-input" id="p2" placeholder="Type the output here...">
       </div>
 
-      <div class="quiz-submit-wrap text-center">
+      <div class="quiz-card">
+        <h5>4. What will be printed?</h5>
+        <pre class="code-block">
+class MathTest{
+    int add(int a, int b){
+        return a + b;
+    }
+}
+public class Test{
+    public static void main(String[] args){
+        MathTest m = new MathTest();
+        System.out.println(m.add(3,4));
+    }
+}</pre>
+        <input type="text" class="prediction-input" id="p4" placeholder="Type the output">
+      </div>
+
+      <div class="quiz-card">
+        <h5>5. What will be printed?</h5>
+        <pre class="code-block">
+class Person {
+    void greet(){
+        System.out.println("Hello");
+    }
+}
+public class Test{
+    public static void main(String[] args){
+        Person p = new Person();
+        p.greet();
+    }
+}</pre>
+        <input type="text" class="prediction-input" id="p5" placeholder="Type the output">
+      </div>
+
+      <div class="quiz-submit-wrap text-center mt-4">
         <button type="button" class="quiz-submit-btn" onclick="checkPrediction()">
           Check Answers
         </button>

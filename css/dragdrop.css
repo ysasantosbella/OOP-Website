@@ -45,11 +45,11 @@ body {
     z-index: 1;
 }
 
-
 .activity-container {
-    max-width: 850px;
-    margin: 40px auto 60px auto; 
-    padding: 0 20px;
+    max-width: 900px; /* Updated to 900px based on your incoming changes */
+    margin: 0 auto;
+    margin-top: calc(var(--nav-h) + 60px); 
+    padding: 0 40px;
 }
 
 .activity-card {
@@ -120,18 +120,19 @@ body {
     box-shadow: var(--sh-md);
 }
 
-/* DARK MODE */
+/* DARK MODE OVERRIDES */
 body.dark-mode {
     background-color: #0f172a !important;
 }
 
 body.dark-mode .activity-card {
-    background-color: #1e293b;
-    border-color: #334155;
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
 }
 
+/* Manually ensured accessibility for dark mode items */
 body.dark-mode .list-group-item,
 body.dark-mode .bubble-select {
-    background-color: #ffffff !important;
+    background-color: #ffffff !important; /* Retaining white for contrast as per your design */
     color: #000000 !important;
 }
