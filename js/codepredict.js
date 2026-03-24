@@ -1,53 +1,37 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
-    const body = document.body;
-
-    if (localStorage.getItem('theme') === 'dark') {
-        body.classList.add('dark-mode');
-        if (darkModeToggle) darkModeToggle.checked = true;
-    }
-
-    if (darkModeToggle) {
-        darkModeToggle.addEventListener('change', () => {
-            if (darkModeToggle.checked) {
-                body.classList.add('dark-mode');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                body.classList.remove('dark-mode');
-                localStorage.setItem('theme', 'light');
-            }
-        });
-    }
-});
-
 function checkPrediction() {
-    let score = 0;
     const answers = {
-        p1: "woof",
-        p2: "animal sound",
-        p3: "toyota",
+        p1: "Woof",
+        p2: "Animal sound",
+        p3: "Toyota",
         p4: "7"
     };
 
+    let score = 0;
+    const total = Object.keys(answers).length;
+
+
     for (let id in answers) {
-        const input = document.getElementById(id);
-        if (input) {
-            const val = input.value.trim().toLowerCase();
-            if (val === answers[id]) {
-                score++;
-                input.style.borderColor = "#28a745";
-            } else {
-                input.style.borderColor = "#dc3545";
-            }
+        const inputElement = document.getElementById(id);
+        if (!inputElement) continue; 
+
+        const userInput = inputElement.value.trim();
+        
+        if (userInput.toLowerCase() === answers[id].toLowerCase()) {
+            score++;
+            inputElement.style.borderColor = "#22c55e"; 
+            inputElement.style.backgroundColor = "rgba(34, 197, 94, 0.1)"; 
+        } else {
+            inputElement.style.borderColor = "#ef4444"; 
+            inputElement.style.backgroundColor = "rgba(239, 68, 68, 0.1)";
         }
     }
 
-    const scoreDiv = document.getElementById("score");
-    const scoreText = document.getElementById("scoreText");
+    const scoreDiv = document.getElementById('score');
+    const scoreText = document.getElementById('scoreText');
 
     if (scoreDiv && scoreText) {
-        scoreText.innerHTML = `Your Score: ${score} / 4`;
-        scoreDiv.classList.add("visible");
+        scoreText.innerHTML = `<h2 style="font-weight: 800; margin-bottom: 10px;">You got ${score} / ${total}!</h2>`;
+        scoreDiv.style.display = "block";
         scoreDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 }

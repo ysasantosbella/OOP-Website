@@ -21,15 +21,14 @@
 
   <header class="quiz-header">
     <h1>Code Output Prediction</h1>
-    <p class="lead">Read the code and type the correct output</p>
+    <p class="lead">Read the code carefully and type the expected output below.</p>
   </header>
 
   <main class="container quiz-section">
     <form id="predictForm">
-
       <div class="quiz-card">
         <h5>1. What will be printed?</h5>
-        <pre class="bg-light p-3">
+        <pre class="code-block">
 class Dog {
     void bark(){
         System.out.println("Woof");
@@ -41,12 +40,12 @@ public class Test{
         d.bark();
     }
 }</pre>
-        <input type="text" class="form-control" id="p1" placeholder="Type the output">
+        <input type="text" class="prediction-input" id="p1" placeholder="Type the output here...">
       </div>
 
       <div class="quiz-card">
         <h5>2. What will be printed?</h5>
-        <pre class="bg-light p-3">
+        <pre class="code-block">
 class Animal {
     void sound(){
         System.out.println("Animal sound");
@@ -59,53 +58,22 @@ public class Test{
         d.sound();
     }
 }</pre>
-        <input type="text" class="form-control" id="p2" placeholder="Type the output">
+        <input type="text" class="prediction-input" id="p2" placeholder="Type the output here...">
       </div>
 
-      <div class="quiz-card">
-        <h5>3. What will be printed?</h5>
-        <pre class="bg-light p-3">
-class Car {
-    String brand = "Toyota";
-}
-public class Test{
-    public static void main(String[] args){
-        Car c = new Car();
-        System.out.println(c.brand);
-    }
-}</pre>
-        <input type="text" class="form-control" id="p3" placeholder="Type the output">
-      </div>
-
-      <div class="quiz-card">
-        <h5>4. What will be printed?</h5>
-        <pre class="bg-light p-3">
-class MathTest{
-    int add(int a, int b){
-        return a + b;
-    }
-}
-public class Test{
-    public static void main(String[] args){
-        MathTest m = new MathTest();
-        System.out.println(m.add(3,4));
-    }
-}</pre>
-        <input type="text" class="form-control" id="p4" placeholder="Type the output">
-      </div>
-
-      <div class="quiz-submit-wrap">
+      <div class="quiz-submit-wrap text-center">
         <button type="button" class="quiz-submit-btn" onclick="checkPrediction()">
           Check Answers
         </button>
       </div>
-
     </form>
 
-    <div id="score">
+    <div id="score" class="text-center mt-5" style="display: none;">
       <div id="scoreText"></div>
-      <span class="score-message">Keep practicing your Java skills!</span>
-      <button class="quiz-retry-btn" onclick="location.reload()">Retry</button>
+      <p class="score-message">Keep practicing your Java skills!</p>
+      <button class="quiz-retry-btn" onclick="location.reload()">
+        <span>Retry Challenge</span>
+      </button>
     </div>
   </main>
 
@@ -115,5 +83,6 @@ public class Test{
   <script src="../js/navbar.js"></script>
   <script src="../js/main.js"></script>
   <script src="../js/codepredict.js"></script>
+  <script src="../js/darkmode.js"></script>
 </body>
 </html>

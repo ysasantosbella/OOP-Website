@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drag & Drop Code Builder</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/dragdrop.css">
@@ -17,15 +19,16 @@
 
     <div id="navbar-root"></div>
 
-    <div class="activity-container">
-        <header class="activity-header text-center">
-            <h1 class="oop-page-title">Drag & Drop Code Builder</h1>
-            <p class="oop-page-subtitle">Arrange the code to form the correct Java program.</p>
-        </header>
+    <header class="quiz-header">
+        <h1>Interactive Code Builder</h1>
+        <p class="lead">Form the correct Java program structure by arranging the blocks below.</p>
+    </header>
 
+    <div class="activity-container">
         <main class="activity-content">
+            
             <section class="activity-card">
-                <h4 class="section-label">Select OOP Concept</h4>
+                <h4 class="section-label">01. Select OOP Concept</h4>
                 <select id="conceptSelect" class="bubble-select" onchange="loadActivity()">
                     <option value="class">Class</option>
                     <option value="object">Object</option>
@@ -35,7 +38,7 @@
             </section>
 
             <section class="activity-card">
-                <h4 class="section-label">Arrange the Code</h4>
+                <h4 class="section-label">02. Arrange the Code</h4>
                 <div id="code-container" class="list-group"></div>
 
                 <div class="action-footer text-center">
@@ -43,6 +46,7 @@
                     <p id="result" class="mt-4"></p>
                 </div>
             </section>
+
         </main>
     </div>
 
