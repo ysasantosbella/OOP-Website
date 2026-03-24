@@ -1,65 +1,61 @@
-function checkQuiz(){
+function checkQuiz() {
+  const answers = {
+    q1: 'b',
+    q2: 'a',
+    q3: 'a',
+    q4: 'b',
+    q5: 'a',
+    q6: 'a',
+    q7: 'a',
+    q8: 'a'
+  };
 
-let score = 0;
+  let score = 0;
+  const total = Object.keys(answers).length;
+  const reviewDiv = document.getElementById('review');
+  reviewDiv.innerHTML = ''; // clear previous reviews
 
-let answers = {
-q1: "b",
-q2: "a",
-q3: "a",
-q4: "b",
-q5: "a",
-q6: "a",
-q7: "a",
-q8: "a",
-q9: "a",
-q10: "b"
-};
+  for (let i = 1; i <= total; i++) {
+    const q = 'q' + i;
+    const selected = document.querySelector(`input[name="${q}"]:checked`);
+    const userAnswer = selected ? selected.value : '';
+    const isCorrect = userAnswer === answers[q];
+    if (isCorrect) score++;
 
-let correctText = {
-q1: "A blueprint for creating objects",
-q2: "An instance of a class",
-q3: "Variables and methods",
-q4: "Inheritance",
-q5: "Dog inherits from Animal",
-q6: "Hiding internal data",
-q7: "To hide internal data",
-q8: "Through public methods",
-q9: "To act as a blueprint for objects",
-q10: "An instance of a class"
-};
+    // Get text of correct answer
+    const correctText = document.querySelector(`input[name="${q}"][value="${answers[q]}"] + span`).innerText;
+    const userText = selected ? selected.nextElementSibling.innerText : 'No answer selected';
 
-let reviewHTML = "<h4 class='text-center mb-4'>Answer Review</h4>";
+    // Create review card
+    const card = document.createElement('div');
+    card.className = 'quiz-card';
+    card.style.borderColor = isCorrect ? 'green' : 'red';
 
-for(let i = 1; i <= 10; i++){
+    card.innerHTML = `
+      <h5>Q${i}: ${isCorrect ? 'Correct' : 'Wrong'}</h5>
+      <p><strong>Your answer:</strong> <span style="color:${isCorrect ? 'green' : 'red'}">${userText}</span></p>
+      <p><strong>Correct answer:</strong> <span style="color:green">${correctText}</span></p>
+    `;
+    reviewDiv.appendChild(card);
+  }
 
-let selected = document.querySelector('input[name="q'+i+'"]:checked');
+  // Show score
+  const scoreDiv = document.getElementById('score');
+  scoreDiv.innerHTML = `Your Score: ${score} / ${total}`;
+  scoreDiv.classList.add('visible');
 
-if(selected && selected.value === answers["q"+i]){
-score++;
-reviewHTML += `
-<div style="color:green; margin-bottom:10px;">
-Q${i}: Correct
-</div>
-`;
-}
-else{
-reviewHTML += `
-<div style="color:red; margin-bottom:10px;">
-Q${i}: Wrong — Correct answer: ${correctText["q"+i]}
-</div>
-`;
-}
+  // Add retry button
+  const retryBtn = document.createElement('button');
+  retryBtn.className = 'quiz-retry-btn';
+  retryBtn.innerText = 'Try Again';
+  retryBtn.onclick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.getElementById('quizForm').reset();
+    reviewDiv.innerHTML = '';
+    scoreDiv.classList.remove('visible');
+  };
+  reviewDiv.appendChild(retryBtn);
 
-}
-
-document.getElementById("score").innerHTML =
-"Your Score: " + score + " / 10";
-
-document.getElementById("review").innerHTML = reviewHTML;
-
-
-document.getElementById("review").scrollIntoView({
-behavior: "smooth"
-});
-
+  // Scroll to review cards
+  reviewDiv.scrollIntoView({ behavior: 'smooth' });
 }
