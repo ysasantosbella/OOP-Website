@@ -95,31 +95,9 @@ body {
     transform: scale(1.05);
 }
 
-/* DARK MODE FIXES */
-body.dark-mode {
-    background-color: #0f172a !important;
-}
-
-body.dark-mode .activity-card {
-    background-color: #1e293b;
-    border-color: #334155;
-}
-
-body.dark-mode .oop-page-title {
-    color: #f1f5f9;
-}
-
-body.dark-mode .section-label {
-    color: #60a5fa !important;
-}
-
-body.dark-mode .list-group-item {
-    background-color: #ffffff !important; 
-    color: #000000 !important;
-    border-color: #cbd5e1 !important;
-}
-
-body.dark-mode .bubble-select {
-    background-color: #ffffff !important;
-    color: #000000 !important;
+.activity-container {
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: calc(var(--nav-h) + 60px); /* add this */
+  padding: 0 40px;
 }

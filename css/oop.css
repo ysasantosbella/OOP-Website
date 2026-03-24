@@ -10,12 +10,12 @@
 /* ---------- PAGE LAYOUT ----------
    Root flex container that controls overall structure
 ---------------------------------- */
+/* ---------- PAGE LAYOUT ---------- */
 .oop-layout {
   display: flex;
   min-height: calc(100vh - var(--nav-h));
-  margin-top: var(--nav-h);
+  margin-top: 0; /* banner handles the offset */
 
-  /* Centered layout with max width constraint */
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -24,6 +24,46 @@
   gap: 0;
 }
 
+/* ---------- BANNER HEADER ---------- */
+.oop-banner-header {
+  margin-top: var(--nav-h);
+  background: linear-gradient(135deg, var(--java-blue-dark) 0%, var(--java-blue) 60%, var(--java-blue-light) 100%);
+  color: var(--white);
+  text-align: center;
+  padding: 52px 24px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.oop-banner-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 36px 36px;
+  pointer-events: none;
+}
+
+.oop-banner-header h1 {
+  font-family: var(--font);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.oop-banner-header .lead {
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.82;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0;
+}
 /* ---------- CONCEPT NAV (LEFT PANEL) ----------
    Sticky sidebar for navigating between sections
 ---------------------------------- */

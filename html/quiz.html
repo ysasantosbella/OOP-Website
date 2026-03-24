@@ -105,21 +105,22 @@
       <!-- Q8 -->
       <div class="quiz-card">
         <h5>8. How can private data be accessed?</h5>
-
-        <input type="radio" name="q8" value="a"> Through public methods<br>
-        <input type="radio" name="q8" value="b"> Direct access<br>
-        <input type="radio" name="q8" value="c"> HTML tags
-
+        <ul class="quiz-options">
+          <li class="quiz-option"><label><input type="radio" name="q8" value="a"><span>Through public methods</span></label></li>
+          <li class="quiz-option"><label><input type="radio" name="q8" value="b"><span>Direct access</span></label></li>
+          <li class="quiz-option"><label><input type="radio" name="q8" value="c"><span>HTML tags</span></label></li>
+        </ul>
       </div>
-    </div>
 
-          <div class="quiz-submit-wrap">
+      <div class="quiz-submit-wrap">
         <button type="button" class="quiz-submit-btn" onclick="checkQuiz()">Submit Quiz</button>
       </div>
 
     </form>
 
-    <div id="score"></div>
+    <!-- RESULT -->
+    <div id="score" class="mt-4 text-center"></div>
+    <div id="review" class="mt-4"></div>
 
   </section>
 
@@ -132,11 +133,11 @@
     </div>
   </footer>
 
-<script src="../js/bootstrap.bundle.min.js"></script>
-<script src="../js/navbar.js"></script>
-<script src="../js/main.js"></script>
-<script src="../js/quiz.js"></script>
-<script src="../js/darkmode.js"></script>
+  <script src="../js/bootstrap.bundle.min.js"></script>
+  <script src="../js/navbar.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/quiz.js"></script>
+  <script src="../js/darkmode.js"></script>
 
 </body>
 </html>
