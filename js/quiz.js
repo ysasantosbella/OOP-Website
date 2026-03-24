@@ -1,65 +1,82 @@
-function checkQuiz() {
+function checkQuiz(){
 
-  let score = 0;
+let score = 0;
 
-  const answers = {
-    q1: "b",
-    q2: "a",
-    q3: "a",
-    q4: "b",
-    q5: "a",
-    q6: "a",
-    q7: "a",
-    q8: "a"
-  };
+let answers = {
+q1: "b",
+q2: "a",
+q3: "a",
+q4: "b",
+q5: "a",
+q6: "a",
+q7: "a",
+q8: "a",
+q9: "a",
+q10: "b"
+};
 
-  for (let i = 1; i <= 8; i++) {
-    const selected = document.querySelector('input[name="q' + i + '"]:checked');
-    if (selected && selected.value === answers["q" + i]) {
-      score++;
-    }
-  }
+let correctText = {
+q1: "A blueprint for creating objects",
+q2: "An instance of a class",
+q3: "Variables and methods",
+q4: "Inheritance",
+q5: "Dog inherits from Animal",
+q6: "Hiding internal data",
+q7: "To hide internal data",
+q8: "Through public methods",
+q9: "To act as a blueprint for objects",
+q10: "An instance of a class"
+};
 
-  let message = "";
+for(let i = 1; i <= 10; i++){
 
-  if (score === 8) {
-    message = "Excellent! You mastered OOP concepts.";
-  } else if (score >= 5) {
-    message = "Good job! You understand most OOP concepts.";
-  } else {
-    message = "Review the OOP lessons again.";
-  }
+let selected = document.querySelector('input[name="q'+i+'"]:checked');
+let questionDiv = document.querySelector('input[name="q'+i+'"]').closest('.card-body');
 
-  const scoreEl = document.getElementById("score");
-  scoreEl.innerHTML =
-    "Your Score: " + score + " / 8<br>" +
-    "<span class='score-message'>" + message + "</span>" +
-    "<br><button class='quiz-retry-btn' onclick='resetQuiz()'>↺ Try Again</button>";
-
-  // Trigger the CSS reveal animation
-  scoreEl.classList.add("visible");
-
-  // Scroll to result
-  scoreEl.scrollIntoView({ behavior: "smooth", block: "center" });
-
-  // Hide submit button
-  document.querySelector(".quiz-submit-btn").style.display = "none";
+// remove old feedback if re-submit
+let oldFeedback = questionDiv.querySelector(".feedback");
+if(oldFeedback){
+oldFeedback.remove();
 }
 
-function resetQuiz() {
-  // Uncheck all radio buttons
-  document.querySelectorAll('input[type="radio"]').forEach(function (input) {
-    input.checked = false;
-  });
+let feedback = document.createElement("p");
+feedback.classList.add("feedback");
 
-  // Hide and clear score box
-  const scoreEl = document.getElementById("score");
-  scoreEl.classList.remove("visible");
-  scoreEl.innerHTML = "";
+if(selected){
 
-  // Show submit button again
-  document.querySelector(".quiz-submit-btn").style.display = "";
+if(selected.value === answers["q"+i]){
+score++;
+feedback.innerHTML = "Correct";
+feedback.style.color = "green";
+}
+else{
+feedback.innerHTML = "Wrong. Correct answer: " + correctText["q"+i];
+feedback.style.color = "red";
+}
 
-  // Scroll back to top of quiz
-  document.getElementById("quizForm").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+else{
+feedback.innerHTML = "No answer selected. Correct answer: " + correctText["q"+i];
+feedback.style.color = "red";
+}
+
+questionDiv.appendChild(feedback);
+
+}
+
+let message = "";
+
+if(score === 10){
+message = "Excellent! You mastered OOP concepts.";
+}
+else if(score >= 6){
+message = "Good job! You understand most concepts.";
+}
+else{
+message = "Review the OOP concepts again.";
+}
+
+document.getElementById("score").innerHTML =
+"Your Score: " + score + " / 10<br>" + message;
+
 }
