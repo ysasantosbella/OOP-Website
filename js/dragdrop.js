@@ -103,23 +103,17 @@ function loadActivity() {
 function enableDrag() { // enables drag and drop functionality for the code lines
 
     let items = document.querySelectorAll(".draggable");
-
     items.forEach(item => {
-
         item.addEventListener("dragstart", function () {
             draggedItem = item;
         });
-
         item.addEventListener("dragover", function (e) {
             e.preventDefault();
         });
-
         item.addEventListener("drop", function () {
-
             let temp = this.innerHTML;
             this.innerHTML = draggedItem.innerHTML;
             draggedItem.innerHTML = temp;
-
         });
 
     });
@@ -129,15 +123,10 @@ function enableDrag() { // enables drag and drop functionality for the code line
 
 
 function checkOrder() { // triggerred when user clicks "Check Answer" button, compares the current order of code lines with the correct order for the selected concept and displays result
-
     let concept = document.getElementById("conceptSelect").value;
-
     let correct = activities[concept].correct;
-
     let lines = document.querySelectorAll("#code-container .list-group-item");
-
     let userOrder = [];
-
     lines.forEach(line => {
         userOrder.push(line.innerText);
     });
@@ -147,16 +136,13 @@ function checkOrder() { // triggerred when user clicks "Check Answer" button, co
 
 
     if (JSON.stringify(userOrder) === JSON.stringify(correct)) {
-
         result.innerHTML = "Correct!";
         result.style.color = "green";
 
     }
     else {
-
         result.innerHTML = "Incorrect order. Try again.";
         result.style.color = "red";
-
     }
 
 }
