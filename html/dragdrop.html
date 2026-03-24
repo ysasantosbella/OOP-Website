@@ -2,63 +2,78 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Drag & Drop Code Builder</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/dragdrop.css">
     <link rel="stylesheet" id="darkmode-style" href="../css/darkmode.css" disabled>
     <link rel="icon" type="image/png" href="assets/logoDark.png">
-
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<!-- The navigation bar is injected here using navbar.js -->
-<div id="navbar-root"></div>
+    <div id="navbar-root"></div>
 
-    <header class="bg-primary text-white text-center p-5">
-        <h1>Drag & Drop Code Builder</h1>
-        <p>Arrange the code to form the correct Java program</p>
-    </header>
+    <div class="oop-layout">
+        
+        <aside class="concept-nav">
+            <div class="concept-nav-label">Java Activities</div>
+            <a href="oop.html" class="concept-nav-item">Core Concepts</a>
+            <a href="quiz.html" class="concept-nav-item">Take Quiz</a>
+            <a href="dragdrop.html" class="concept-nav-item active">Code Builder</a>
+        </aside>
 
+        <main class="oop-main">
+            
+            <div class="oop-page-header">
+                <h1 class="oop-page-title">Drag & Drop Code Builder</h1>
+                <p class="oop-page-subtitle">Arrange the blocks to form a valid Java program structure.</p>
+            </div>
 
-    <div class="container mt-5">
+            <section class="concept-section">
+                <div class="concept-number">01</div>
+                <div class="concept-body">
+                    <h2 class="concept-title">Select OOP Concept</h2>
+                    <p class="concept-desc">Choose a concept to load its corresponding code blocks.</p>
+                    
+                    <select id="conceptSelect" class="bubble-select mb-4" onchange="loadActivity()">
+                        <option value="class">Class</option>
+                        <option value="object">Object</option>
+                        <option value="inheritance">Inheritance</option>
+                        <option value="encapsulation">Encapsulation</option>
+                    </select>
+                </div>
+            </section>
 
-        <h4>Select OOP Concept</h4>
+            <section class="concept-section">
+                <div class="concept-number">02</div>
+                <div class="concept-body">
+                    <h2 class="concept-title">Arrange the Code</h2>
+                    <p class="concept-desc">Drag the items below into the correct execution order.</p>
 
-        <select id="conceptSelect" class="form-select mb-4" onchange="loadActivity()">
+                    <div id="code-container" class="list-group">
+                        </div>
 
-            <option value="class">Class</option>
-            <option value="object">Object</option>
-            <option value="inheritance">Inheritance</option>
-            <option value="encapsulation">Encapsulation</option>
+                    <div class="mt-5 d-flex align-items: center; gap: 20px;">
+                        <button class="bubble-btn" onclick="checkOrder()">
+                            Check Answer
+                        </button>
+                        <p id="result" class="m-0" style="font-weight: 700;"></p>
+                    </div>
+                </div>
+            </section>
 
-        </select>
-
-
-        <div id="code-container" class="list-group"></div>
-
-        <br>
-
-        <button class="btn btn-success" onclick="checkOrder()">Check Answer</button>
-
-        <p id="result" class="mt-3 mb-5"></p>
-
+        </main>
     </div>
 
-
-<div id="footer-root"></div>
-
-
+    <div id="footer-root"></div>
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="../js/navbar.js"></script>
@@ -67,5 +82,4 @@
     <script src="../js/darkmode.js"></script>
 
 </body>
-
 </html>
