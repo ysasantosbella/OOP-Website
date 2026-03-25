@@ -1,34 +1,51 @@
+<!-- =============================================
+  Drag & Drop Code Builder
+  Purpose: Interactive activity where learners 
+  arrange Java code blocks to form correct program 
+  structures based on OOP concepts.
+============================================= -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Information -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drag & Drop Code Builder</title>
 
+    <!-- Fonts (JetBrains Mono for code, Sora for text) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
     
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/dragdrop.css">
-    <link rel="stylesheet" id="darkmode-style" href="../css/darkmode.css" disabled>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- Bootstrap core -->
+    <link rel="stylesheet" href="../css/style.css"> <!-- Global styles -->
+    <link rel="stylesheet" href="../css/dragdrop.css"> <!-- Activity-specific styles -->
+    <link rel="stylesheet" id="darkmode-style" href="../css/darkmode.css" disabled> <!-- Dark mode (toggleable) -->
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/logoDark.png">
 </head>
 <body>
 
+    <!-- NAVBAR (loaded dynamically via JS) -->
     <div id="navbar-root"></div>
 
+    <!-- HEADER Section -->
     <header class="quiz-header">
         <h1>Interactive Code Builder</h1>
         <p class="lead">Form the correct Java program structure by arranging the blocks below.</p>
     </header>
 
+    <!-- MAIN ACTIVITY CONTAINER -->
     <div class="activity-container">
         <main class="activity-content">
             
+            <!-- STEP 1: Select OOP Concept -->
             <section class="activity-card">
                 <h4 class="section-label">01. Select OOP Concept</h4>
+                <!-- Dropdown menu to choose which concept to practice -->
                 <select id="conceptSelect" class="bubble-select" onchange="loadActivity()">
                     <option value="class">Class</option>
                     <option value="object">Object</option>
@@ -37,25 +54,37 @@
                 </select>
             </section>
 
+            <!-- STEP 2: Arrange Code Blocks -->
             <section class="activity-card">
                 <h4 class="section-label">02. Arrange the Code</h4>
+                <!-- Container where draggable code blocks will appear -->
                 <div id="code-container" class="list-group"></div>
 
+                <!-- Action buttons -->
                 <div class="action-footer text-center">
                     <button class="bubble-btn" onclick="checkOrder()">Check Answer</button>
+                    <!-- Feedback message after checking -->
                     <p id="result" class="mt-4"></p>
                 </div>
             </section>
 
+            <!-- RESULT CARD (shown after checking answer) -->
+            <div id="result-card" class="result-card" style="display:none;">
+                <h2 id="result-title"></h2>
+                <p id="result-msg"></p>
+            </div>
+
         </main>
     </div>
 
+    <!-- FOOTER (loaded dynamically via JS) -->
     <div id="footer-root"></div>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="../js/navbar.js"></script>
-    <script src="../js/main.js"></script>
-    <script src="../js/dragdrop.js"></script>
-    <script src="../js/darkmode.js"></script>
+    <!-- Scripts -->
+    <script src="js/bootstrap.bundle.min.js"></script> <!-- Bootstrap JS -->
+    <script src="../js/navbar.js"></script> <!-- Navbar loader -->
+    <script src="../js/main.js"></script> <!-- General scripts -->
+    <script src="../js/dragdrop.js"></script> <!-- Drag & drop logic -->
+    <script src="../js/darkmode.js"></script> <!-- Dark mode toggle -->
 </body>
 </html>

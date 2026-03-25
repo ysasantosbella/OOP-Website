@@ -1,7 +1,15 @@
-let draggedItem = null;
+/* =============================================
+   DRAG & DROP — dragdrop.js
+   Purpose:
+   - Provide drag-and-drop activity for code ordering
+   - Validate user arrangement against correct order
+   - Display results with feedback and retry option
+   ============================================= */
 
+let draggedItem = null; // Stores the item currently being dragged
+
+// Activity definitions: each concept has a correct order and a shuffled order
 let activities = {
-
     class: {
         correct: [
             "class Car {",
@@ -69,82 +77,104 @@ let activities = {
             "public void setAge(int a){ age = a; }"
         ]
     }
-
 };
 
-
-
+/**
+ * Loads the selected activity into the container.
+ * - Clears previous content
+ * - Displays shuffled code lines
+ * - Resets result card and retry button
+ */
 function loadActivity() {
-
-    let concept = document.getElementById("conceptSelect").value; // drop down menu for oop concepts selection
-
+    let concept = document.getElementById("conceptSelect").value;
     let container = document.getElementById("code-container");
+    container.innerHTML = "";
 
-    container.innerHTML = ""; // removes old code lines when new concept is selected
-
-    activities[concept].shuffled.forEach(line => { // for each line in the shuffled array of the selected concept, create a div and make it draggable
-
+    // Populate container with shuffled lines
+    activities[concept].shuffled.forEach(line => {
         let div = document.createElement("div");
-
         div.className = "list-group-item draggable";
-
         div.draggable = true;
-
         div.innerText = line;
-
         container.appendChild(div);
-
     });
 
-    enableDrag();
+    // Reset result card and retry button
+    const resultCard = document.getElementById("result-card");
+    if (resultCard) resultCard.style.display = "none";
+    const existingRetry = document.getElementById("retryBtn");
+    if (existingRetry) existingRetry.remove();
+    document.getElementById("result").innerHTML = "";
 
+    enableDrag();
 }
 
-function enableDrag() { // enables drag and drop functionality for the code lines
-
+/**
+ * Enables drag-and-drop functionality for code lines.
+ * - Tracks dragged item
+ * - Allows swapping of text between items
+ */
+function enableDrag() {
     let items = document.querySelectorAll(".draggable");
     items.forEach(item => {
         item.addEventListener("dragstart", function () {
             draggedItem = item;
         });
         item.addEventListener("dragover", function (e) {
-            e.preventDefault();
+            e.preventDefault(); // Allow drop
         });
         item.addEventListener("drop", function () {
+            // Swap text between dragged item and target
             let temp = this.innerHTML;
             this.innerHTML = draggedItem.innerHTML;
             draggedItem.innerHTML = temp;
         });
-
     });
-
 }
 
-
-
-function checkOrder() { // triggerred when user clicks "Check Answer" button, compares the current order of code lines with the correct order for the selected concept and displays result
+/**
+ * Checks if the user’s arrangement matches the correct order.
+ * - Compares user order with correct order
+ * - Displays result card with feedback
+ * - Adds retry button if needed
+ */
+function checkOrder() {
     let concept = document.getElementById("conceptSelect").value;
     let correct = activities[concept].correct;
     let lines = document.querySelectorAll("#code-container .list-group-item");
     let userOrder = [];
-    lines.forEach(line => {
-        userOrder.push(line.innerText);
-    });
+    lines.forEach(line => userOrder.push(line.innerText));
 
+    const isCorrect = JSON.stringify(userOrder) === JSON.stringify(correct);
 
-    let result = document.getElementById("result");
+    // Show styled result card
+    const resultCard = document.getElementById("result-card");
+    const resultTitle = document.getElementById("result-title");
+    const resultMsg = document.getElementById("result-msg");
 
-
-    if (JSON.stringify(userOrder) === JSON.stringify(correct)) {
-        result.innerHTML = "Correct!";
-        result.style.color = "green";
-
+    if (resultCard && resultTitle && resultMsg) {
+        resultTitle.textContent = isCorrect ? "Correct!" : "Not quite!";
+        resultMsg.textContent = isCorrect
+            ? "Great job arranging the code blocks."
+            : "The order isn't right yet. Try rearranging the blocks.";
+        resultCard.style.display = "block";
+        resultCard.className = "result-card " + (isCorrect ? "result-correct" : "result-wrong");
+        resultCard.scrollIntoView({ behavior: "smooth", block: "center" });
     }
-    else {
-        result.innerHTML = "Incorrect order. Try again.";
-        result.style.color = "red";
-    }
 
+    // Add Try Again button if not already present
+    if (!document.getElementById("retryBtn")) {
+        const retryBtn = document.createElement("button");
+        retryBtn.id = "retryBtn";
+        retryBtn.className = "quiz-retry-btn";
+        retryBtn.innerText = "Try Again";
+        retryBtn.onclick = () => {
+            loadActivity();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+        resultCard.appendChild(retryBtn);
+    }
 }
 
+// Initialize with default activity on page load
 loadActivity();

@@ -1,4 +1,13 @@
+/* =============================================
+   QUIZ CHECKER — quiz.js
+   Purpose:
+   - Validate user answers against correct ones
+   - Display review cards with feedback
+   - Show score and retry option
+   ============================================= */
+
 function checkQuiz() {
+  // Define correct answers for each question
   const answers = {
     q1: 'b',
     q2: 'a',
@@ -10,11 +19,12 @@ function checkQuiz() {
     q8: 'a'
   };
 
-  let score = 0;
-  const total = Object.keys(answers).length;
+  let score = 0; // Track number of correct answers
+  const total = Object.keys(answers).length; // Total number of questions
   const reviewDiv = document.getElementById('review');
-  reviewDiv.innerHTML = ''; // clear previous reviews
+  reviewDiv.innerHTML = ''; // Clear previous reviews
 
+  // Loop through each question
   for (let i = 1; i <= total; i++) {
     const q = 'q' + i;
     const selected = document.querySelector(`input[name="${q}"]:checked`);
@@ -26,7 +36,7 @@ function checkQuiz() {
     const correctText = document.querySelector(`input[name="${q}"][value="${answers[q]}"] + span`).innerText;
     const userText = selected ? selected.nextElementSibling.innerText : 'No answer selected';
 
-    // Create review card
+    // Create review card for each question
     const card = document.createElement('div');
     card.className = 'quiz-card';
     card.style.borderColor = isCorrect ? 'green' : 'red';
@@ -39,23 +49,23 @@ function checkQuiz() {
     reviewDiv.appendChild(card);
   }
 
-  // Show score
+  // Show score summary
   const scoreDiv = document.getElementById('score');
   scoreDiv.innerHTML = `Your Score: ${score} / ${total}`;
   scoreDiv.classList.add('visible');
 
-  // Add retry button
+  // Add retry button to reset quiz
   const retryBtn = document.createElement('button');
   retryBtn.className = 'quiz-retry-btn';
   retryBtn.innerText = 'Try Again';
   retryBtn.onclick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    document.getElementById('quizForm').reset();
-    reviewDiv.innerHTML = '';
-    scoreDiv.classList.remove('visible');
+    document.getElementById('quizForm').reset(); // Reset form selections
+    reviewDiv.innerHTML = ''; // Clear review cards
+    scoreDiv.classList.remove('visible'); // Hide score
   };
   reviewDiv.appendChild(retryBtn);
 
-  // Scroll to review cards
+  // Scroll to review section for feedback visibility
   reviewDiv.scrollIntoView({ behavior: 'smooth' });
 }

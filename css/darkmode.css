@@ -309,3 +309,81 @@ body                          { background-color: #0f172a; }
 }
 
 #result                       { color: #93c5fd; }
+
+/* =============================================
+   DRAG & DROP RESULT CARD — Dark Mode Overrides
+   Matches quiz score box styling
+   ============================================= */
+.result-card {
+  background: #1a2540 !important;
+  border: 2px solid #2a4a8a !important;
+  color: #bfd4f5 !important;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.4) !important;
+}
+
+.result-message {
+  color: #7a9cc4;
+}
+
+/* Retry button — consistent with quiz dark mode */
+.quiz-retry-btn {
+  color: #60a5fa;
+  border-color: #2a4a8a;
+}
+
+.quiz-retry-btn:hover {
+  background: #1d4ed8;
+  color: #ffffff;
+  border-color: #1d4ed8;
+}
+
+/* =============================================
+   CODE PREDICTION PAGE — Dark Mode Overrides
+   Mirrors quiz card styles with matching dark palette
+   ============================================= */
+
+/* Code block — dark background with blue border accent */
+.code-block {
+  background: #0f172a;
+  border-color: #243050;
+}
+
+.code-block pre {
+  color: #c9d9f0;
+}
+
+/* Text input — dark fill, subtle blue focus ring */
+.predict-input {
+  background: #111827;
+  border-color: #243050;
+  color: #e2e8f0;
+}
+
+.predict-input::placeholder {
+  color: #475569;
+}
+
+.predict-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18);
+}
+
+/* Score display box */
+.score-display {
+  background: #1a2540;
+  border-color: #2a4a8a;
+  color: #bfd4f5;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.4);
+}
+
+/* Retry button */
+.quiz-retry-btn {
+  color: #60a5fa;
+  border-color: #2a4a8a;
+}
+
+.quiz-retry-btn:hover {
+  background: #1d4ed8;
+  color: #ffffff;
+  border-color: #1d4ed8;
+}

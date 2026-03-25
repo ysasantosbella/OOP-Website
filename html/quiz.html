@@ -1,38 +1,51 @@
+<!-- =============================================
+  Practice Quiz Page
+  Purpose: Test learners' knowledge of OOP concepts
+  with multiple-choice questions and instant feedback.
+============================================= -->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+  <!-- Meta Information -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz</title>
 
+  <!-- Fonts (JetBrains Mono for code, Sora for text) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/quiz.css">
-  <link rel="stylesheet" id="darkmode-style" href="../css/darkmode.css" disabled>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- Bootstrap core -->
+  <link rel="stylesheet" href="../css/style.css"> <!-- Global styles -->
+  <link rel="stylesheet" href="../css/quiz.css"> <!-- Quiz-specific styles -->
+  <link rel="stylesheet" id="darkmode-style" href="../css/darkmode.css" disabled> <!-- Dark mode (toggleable) -->
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/logoDark.png">
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
+  <!-- NAVBAR (loaded dynamically via JS) -->
   <div id="navbar-root"></div>
 
-  <!-- HEADER -->
+  <!-- HEADER Section -->
   <header class="quiz-header">
     <h1>Practice Quiz</h1>
     <p class="lead">Test your knowledge of Object-Oriented Programming</p>
   </header>
 
-  <!-- QUIZ -->
+  <!-- QUIZ Section -->
   <section class="quiz-section">
 
+    <!-- Quiz Form -->
     <form id="quizForm">
 
-      <!-- Q1 -->
+      <!-- Question 1 -->
       <div class="quiz-card">
         <h5>1. What is a class in Object-Oriented Programming?</h5>
         <ul class="quiz-options">
@@ -42,7 +55,7 @@
         </ul>
       </div>
 
-      <!-- Q2 -->
+      <!-- Question 2 -->
       <div class="quiz-card">
         <h5>2. What is an object?</h5>
         <ul class="quiz-options">
@@ -52,7 +65,7 @@
         </ul>
       </div>
 
-      <!-- Q3 -->
+      <!-- Question 3 -->
       <div class="quiz-card">
         <h5>3. What does a class define?</h5>
         <ul class="quiz-options">
@@ -62,7 +75,7 @@
         </ul>
       </div>
 
-      <!-- Q4 -->
+      <!-- Question 4 -->
       <div class="quiz-card">
         <h5>4. Which concept allows one class to inherit another class's properties?</h5>
         <ul class="quiz-options">
@@ -72,7 +85,7 @@
         </ul>
       </div>
 
-      <!-- Q5 -->
+      <!-- Question 5 -->
       <div class="quiz-card">
         <h5>5. In the example "Dog extends Animal", what does this mean?</h5>
         <ul class="quiz-options">
@@ -82,7 +95,7 @@
         </ul>
       </div>
 
-      <!-- Q6 -->
+      <!-- Question 6 -->
       <div class="quiz-card">
         <h5>6. What is encapsulation?</h5>
         <ul class="quiz-options">
@@ -92,7 +105,7 @@
         </ul>
       </div>
 
-      <!-- Q7 -->
+      <!-- Question 7 -->
       <div class="quiz-card">
         <h5>7. Why do we use private variables?</h5>
         <ul class="quiz-options">
@@ -102,7 +115,7 @@
         </ul>
       </div>
 
-      <!-- Q8 -->
+      <!-- Question 8 -->
       <div class="quiz-card">
         <h5>8. How can private data be accessed?</h5>
         <ul class="quiz-options">
@@ -112,13 +125,14 @@
         </ul>
       </div>
 
+      <!-- Submit Button -->
       <div class="quiz-submit-wrap">
         <button type="button" class="quiz-submit-btn" onclick="checkQuiz()">Submit Quiz</button>
       </div>
 
     </form>
 
-    <!-- RESULT -->
+    <!-- RESULT Display -->
     <div id="score" class="mt-4 text-center"></div>
     <div id="review" class="mt-4"></div>
 
@@ -128,16 +142,18 @@
   <footer class="footer">
     <div class="footer-inner">
       <span class="footer-logo">☕ OOP Guide</span>
+      <!-- Credits -->
       <span class="footer-credit">No AI tools were used in proposing, designing, coding, or documenting this project.</span>
       <span class="footer-credit">LBYCPG3 | Batiller, Reantaso, Santos, Senario</span>
     </div>
   </footer>
 
-  <script src="../js/bootstrap.bundle.min.js"></script>
-  <script src="../js/navbar.js"></script>
-  <script src="../js/main.js"></script>
-  <script src="../js/quiz.js"></script>
-  <script src="../js/darkmode.js"></script>
+  <!-- Scripts -->
+  <script src="../js/bootstrap.bundle.min.js"></script> <!-- Bootstrap JS -->
+  <script src="../js/navbar.js"></script> <!-- Navbar loader -->
+  <script src="../js/main.js"></script> <!-- General scripts -->
+  <script src="../js/quiz.js"></script> <!-- Quiz logic -->
+  <script src="../js/darkmode.js"></script> <!-- Dark mode toggle -->
 
 </body>
 </html>

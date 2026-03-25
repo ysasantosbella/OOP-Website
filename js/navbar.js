@@ -1,15 +1,20 @@
 /* =============================================
    CPG3 OOP GUIDE — navbar.js
-   Injects the shared sidebar + topnav into
-   every page. Add <div id="navbar-root"></div>
-   and <script src="../js/navbar.js"></script>
-   to each HTML file.
+   Purpose:
+   - Inject shared sidebar and top navigation bar
+   - Ensure consistent layout across all pages
+   - Add footer with project credits
+   Usage:
+   - Include <div id="navbar-root"></div> and
+     <div id="footer-root"></div> in each HTML file
+   - Add <script src="../js/navbar.js"></script>
    ============================================= */
 
 (function () {
 
   /* ------------------------------------------
-     Detect which page is active based on filename
+     Detect active page based on current filename
+     Used to highlight the correct sidebar link
   ------------------------------------------ */
   var page = window.location.pathname.split('/').pop() || 'index.html';
 
@@ -18,7 +23,11 @@
   }
 
   /* ------------------------------------------
-     Build the shared HTML
+     Build shared HTML for sidebar + topnav
+     Includes:
+     - Sidebar overlay
+     - Sidebar with navigation links
+     - Top navigation bar with brand + dark mode toggle
   ------------------------------------------ */
   var html = `
     <!-- SIDEBAR OVERLAY -->
@@ -46,7 +55,7 @@
         <a href="dragdrop.html" class="sidebar-link ${isActive('dragdrop.html')}">
           <img src="assets/codeBuilder.png" alt="" class="sidebar-link-icon"> Code Builder
         </a>
-        <a href="codepredict.html" class="sidebar-link ${isActive('codepredict.html')}">
+        <a href="codeprediction.html" class="sidebar-link ${isActive('codeprediction.html')}">
           <img src="assets/codePrediction.png" alt="" class="sidebar-link-icon"> Code Prediction
         </a>
       </nav>
@@ -75,29 +84,35 @@
   `;
 
   /* ------------------------------------------
-     Inject into #navbar-root
+     Inject navbar into #navbar-root
   ------------------------------------------ */
   var root = document.getElementById('navbar-root');
   if (root) {
     root.innerHTML = html;
   }
 
-  // Inject footer
-var footerHTML = `
-  <footer class="footer">
-    <div class="footer-inner">
-      <span class="footer-logo">
-                <img src="../assets/logoLight.png" alt="OOP Guide Logo" class="nav-logo"> OOP Guide
-</span>
-      <span class="footer-credit">No AI tools were used in proposing, designing, coding, or documenting this project.</span>
-      <span class="footer-credit">LBYCPG3 | Batiller, Reantaso, Santos, Senario</span>
-    </div>
-  </footer>
-`;
+  /* ------------------------------------------
+     Build and inject footer into #footer-root
+     Includes:
+     - Logo
+     - Credits
+     - Statement of authorship
+  ------------------------------------------ */
+  var footerHTML = `
+    <footer class="footer">
+      <div class="footer-inner">
+        <span class="footer-logo">
+          <img src="../assets/logoLight.png" alt="OOP Guide Logo" class="nav-logo"> OOP Guide
+        </span>
+        <span class="footer-credit">No AI tools were used in proposing, designing, coding, or documenting this project.</span>
+        <span class="footer-credit">LBYCPG3 | Batiller, Reantaso, Santos, Senario</span>
+      </div>
+    </footer>
+  `;
 
-var footerRoot = document.getElementById('footer-root');
-if (footerRoot) {
-  footerRoot.innerHTML = footerHTML;
-}
+  var footerRoot = document.getElementById('footer-root');
+  if (footerRoot) {
+    footerRoot.innerHTML = footerHTML;
+  }
 
 })();

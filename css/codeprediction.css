@@ -1,0 +1,243 @@
+/* =============================================
+   CODE PREDICTION PAGE — codeprediction.css
+   Purpose: Styles for the Code Prediction interface.
+   Relies on CSS variables defined in style.css.
+   ============================================= */
+
+/* =============================================
+   GLOBAL LAYOUT
+   ============================================= */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure footer stays at bottom */
+}
+
+.container {
+  flex: 1; /* Allow main content to expand */
+}
+
+header {
+  margin-top: var(--nav-h); /* Offset for fixed navbar height */
+}
+
+/* =============================================
+   HEADER BANNER
+   ============================================= */
+.quiz-header {
+  margin-top: var(--nav-h);
+  background: linear-gradient(
+    135deg,
+    var(--java-blue-dark) 0%,
+    var(--java-blue) 60%,
+    var(--java-blue-light) 100%
+  );
+  color: var(--white);
+  text-align: center;
+  padding: 52px 24px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative grid overlay */
+.quiz-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 36px 36px;
+  pointer-events: none;
+}
+
+.quiz-header h1 {
+  font-family: var(--font);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1; /* Ensure text sits above overlay */
+}
+
+.quiz-header .lead {
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.82;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* =============================================
+   QUIZ SECTION CONTAINER
+   ============================================= */
+.quiz-section {
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 48px 24px 72px;
+}
+
+/* =============================================
+   QUESTION CARDS
+   ============================================= */
+.quiz-card {
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--r-lg);
+  padding: 28px 30px;
+  margin-bottom: 20px;
+  box-shadow: var(--sh-sm);
+  transition: box-shadow var(--ease), border-color var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Left accent bar */
+.quiz-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--java-blue), var(--java-blue-light));
+  border-radius: 4px 0 0 4px;
+}
+
+.quiz-card:hover {
+  box-shadow: var(--sh-md);
+  border-color: var(--gray-400);
+}
+
+.quiz-card h5 {
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--java-blue-dark);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+/* =============================================
+   CODE BLOCK (for Java snippets)
+   ============================================= */
+.code-block {
+  background: #f1f5f9;
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--r-sm);
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  overflow-x: auto; /* Allow horizontal scroll for long lines */
+}
+
+.code-block pre {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: #1e293b;
+  margin: 0;
+  white-space: pre; /* Preserve spacing */
+}
+
+/* =============================================
+   TEXT INPUT (user predictions)
+   ============================================= */
+.predict-input {
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 50px;
+  border: 1.5px solid var(--gray-200);
+  background: var(--white);
+  font-family: var(--font);
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  outline: none;
+  transition: border-color var(--ease), box-shadow var(--ease), background var(--ease);
+}
+
+.predict-input::placeholder {
+  color: var(--gray-400);
+  font-style: italic;
+}
+
+.predict-input:focus {
+  border-color: var(--java-blue-light);
+  box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.12);
+}
+
+/* =============================================
+   SUBMIT BUTTON
+   ============================================= */
+.quiz-submit-wrap {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.quiz-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--java-orange);
+  color: var(--white);
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 14px 38px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(244, 81, 30, 0.36);
+  transition: transform var(--ease), box-shadow var(--ease), background var(--ease);
+}
+
+.quiz-submit-btn:hover {
+  background: var(--java-orange-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(244, 81, 30, 0.44);
+}
+
+/* =============================================
+   SCORE DISPLAY
+   ============================================= */
+#result {
+  font-family: var(--font);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--java-blue-dark);
+}
+
+.score-display {
+  text-align: center;
+  font-family: var(--font);
+  color: var(--java-blue-dark);
+  background: var(--white);
+  border: 2px solid var(--java-blue-light);
+  border-radius: var(--r-lg);
+  padding: 28px 32px;
+  margin: 0 auto 48px;
+  max-width: 440px;
+  box-shadow: var(--sh-md);
+  animation: fadeSlideUp 0.45s ease both;
+}
+
+/* =============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================= */
+@media (max-width: 600px) {
+  .quiz-section {
+    padding: 32px 14px 56px;
+  }
+
+  .quiz-card {
+    padding: 20px 18px;
+  }
+
+  .quiz-header {
+    padding: 40px 18px 36px;
+  }
+
+  .code-block pre {
+    font-size: 0.75rem; /* Smaller font for small screens */
+  }
+}

@@ -1,32 +1,45 @@
 /* =============================================
    CPG3 OOP GUIDE — main.js
-   Sidebar · Dark Mode · Scroll · Helpers
+   Features:
+   - Sidebar toggle (open/close with overlay)
+   - Navbar shadow on scroll
+   - Dark mode toggle with logo updates
+   - Smooth scroll for hero button
+   - Toggle explanation sections
    ============================================= */
 
 /* ---------- SIDEBAR ---------- */
-var sidebar = document.getElementById('sidebar');
-var overlay = document.getElementById('sidebarOverlay');
-var hamburger = document.getElementById('hamburger');
+var sidebar      = document.getElementById('sidebar');
+var overlay      = document.getElementById('sidebarOverlay');
+var hamburger    = document.getElementById('hamburger');
 var sidebarClose = document.getElementById('sidebarClose');
 
+/**
+ * Opens the sidebar and activates overlay
+ */
 function openSidebar() {
   if (!sidebar) return;
   sidebar.classList.add('open');
   overlay.classList.add('active');
-  document.body.style.overflow = 'hidden';
+  document.body.style.overflow = 'hidden'; // Prevent background scroll
 }
 
+/**
+ * Closes the sidebar and deactivates overlay
+ */
 function closeSidebar() {
   if (!sidebar) return;
   sidebar.classList.remove('open');
   overlay.classList.remove('active');
-  document.body.style.overflow = '';
+  document.body.style.overflow = ''; // Restore scroll
 }
 
+// Event listeners for sidebar toggle
 if (hamburger)    hamburger.addEventListener('click', openSidebar);
 if (sidebarClose) sidebarClose.addEventListener('click', closeSidebar);
 if (overlay)      overlay.addEventListener('click', closeSidebar);
 
+// Close sidebar when pressing Escape key
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeSidebar();
 });
@@ -34,6 +47,7 @@ document.addEventListener('keydown', function(e) {
 /* ---------- NAVBAR SCROLL SHADOW ---------- */
 var topnav = document.getElementById('topnav');
 
+// Add shadow effect when scrolling down
 window.addEventListener('scroll', function() {
   if (!topnav) return;
   if (window.scrollY > 10) {
@@ -44,6 +58,10 @@ window.addEventListener('scroll', function() {
 });
 
 /* ---------- DARK MODE ---------- */
+/**
+ * Updates logo images depending on dark mode state
+ * @param {boolean} isDark - true if dark mode is active
+ */
 function updateLogos(isDark) {
   var logos = document.querySelectorAll('.nav-logo');
   logos.forEach(function (logo) {
@@ -51,19 +69,24 @@ function updateLogos(isDark) {
   });
 }
 
+/**
+ * Toggles dark mode on/off
+ */
 function toggleDarkMode() {
   var style  = document.getElementById('darkmode-style');
   var toggle = document.getElementById('darkmodeToggle');
   if (!style) return;
 
-  var isDark = !style.disabled;   // currently dark → turn off
+  var isDark = !style.disabled; // true if currently dark mode
 
   if (isDark) {
+    // Disable dark mode
     style.disabled = true;
     if (toggle) toggle.classList.remove('dark');
     localStorage.setItem('darkmode', 'disabled');
     updateLogos(false);
   } else {
+    // Enable dark mode
     style.disabled = false;
     if (toggle) toggle.classList.add('dark');
     localStorage.setItem('darkmode', 'enabled');
@@ -71,6 +94,7 @@ function toggleDarkMode() {
   }
 }
 
+// Apply saved dark mode preference on page load
 document.addEventListener('DOMContentLoaded', function() {
   var style  = document.getElementById('darkmode-style');
   var toggle = document.getElementById('darkmodeToggle');
@@ -83,6 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /* ---------- SMOOTH SCROLL (hero button) ---------- */
+// Smoothly scroll to target section when hero button is clicked
 document.addEventListener('DOMContentLoaded', function() {
   var btn = document.querySelector('.hero-btn');
   if (btn) {
@@ -98,6 +123,10 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /* ---------- TOGGLE EXPLANATION (oop.html) ---------- */
+/**
+ * Toggles visibility of explanation sections
+ * @param {string} id - element ID to show/hide
+ */
 function toggleExplanation(id) {
   var el = document.getElementById(id);
   if (!el) return;

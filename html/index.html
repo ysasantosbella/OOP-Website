@@ -1,24 +1,37 @@
+<!-- =============================================
+  The Guide to Object Oriented Programming
+  Purpose: Landing page introducing Java OOP concepts
+  with hero section and feature navigation.
+============================================= -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta Information -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Guide to Object Oriented Programming</title>
+
+  <!-- Fonts (JetBrains Mono for code, Sora for text) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" id="darkmode-style" href="../css/darkmode.css" disabled />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/style.css" /> <!-- Global styles -->
+  <link rel="stylesheet" id="darkmode-style" href="../css/darkmode.css" disabled /> <!-- Dark mode (toggleable) -->
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/logoDark.png">
 </head>
 <body>
 
   <!-- NAVBAR -->
-  <!-- The navigation bar is dynamically loaded here using navbar.js -->
+  <!-- Dynamically injected navigation bar via navbar.js -->
   <div id="navbar-root"></div>
 
   <!-- HERO SECTION -->
-  <!-- This is the main landing section. Includes background grid, title, subtitle, CTA button, and a sample code window. -->
+  <!-- Landing section with background grid, title, subtitle, CTA button, and sample code window -->
   <section class="hero" id="hero">
     <div class="hero-bg-grid"></div>
     <div class="hero-content">
@@ -32,7 +45,7 @@
       <a href="#features" class="hero-btn">Start Learning <span class="btn-arrow">↓</span></a>
     </div>
 
-    <!-- Hero visual: shows a sample Java code snippet in a stylized code window -->
+    <!-- Hero visual: stylized code window with sample Java snippet -->
     <div class="hero-visual">
       <div class="code-window">
         <div class="code-window-bar">
@@ -48,14 +61,13 @@
           &nbsp;&nbsp;<span class="kw">public static void</span> main(<span class="cn">String</span>[] args) {<br>
           &nbsp;&nbsp;&nbsp;&nbsp;<span class="cm">// Print message</span><br>
           &nbsp;&nbsp;&nbsp;&nbsp;<span class="cn">System</span>.out.println(<span class="st">"umuwi ka na baby"</span>);<br>
-        
         </div>
       </div>
     </div>
   </section>
 
   <!-- FEATURES SECTION -->
-  <!-- Lists the core interactive features of the platform: Explore, Quiz, Code Builder, and Code Prediction -->
+  <!-- Highlights the platform’s interactive learning modules -->
   <section class="features" id="features">
     <div class="features-inner">
       <p class="features-eyebrow">Explore the Guide</p>
@@ -93,7 +105,7 @@
         </a>
 
         <!-- Feature card: Code Prediction -->
-        <a href="codepredict.html" class="feature-card">
+        <a href="codeprediction.html" class="feature-card">
           <div class="feature-card-icon">
             <img src="assets/codePrediction.png" alt="Code Prediction Icon">
           </div>
@@ -106,10 +118,13 @@
     </div>
   </section>
 
-<div id="footer-root"></div>
-
+  <!-- FOOTER -->
+  <!-- Dynamically injected footer via JS -->
+  <div id="footer-root"></div>
 
   <!-- Scripts -->
   <!-- Navbar and main JS functionalities -->
   <script src="../js/navbar.js"></script>
   <script src="../js/main.js"></script>
+</body>
+</html>

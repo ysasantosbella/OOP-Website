@@ -1,9 +1,16 @@
 /* =============================================
    OOP CONCEPTS PAGE — oop.js
-   Toggle examples + active nav highlight
+   Features:
+   - Toggle example blocks (show/hide)
+   - Highlight active navigation item on scroll
    ============================================= */
 
 /* ---------- TOGGLE EXAMPLE BLOCKS ---------- */
+/**
+ * Toggles visibility of an example block and updates button text
+ * @param {string} id - ID of the example block element
+ * @param {HTMLElement} btn - Button element that triggered the toggle
+ */
 function toggleExample(id, btn) {
   var block = document.getElementById(id);
   if (!block) return;
@@ -26,6 +33,10 @@ window.addEventListener('load', function () {
 
   if (!sections.length || !navItems.length) return;
 
+  /**
+   * Sets the active navigation item based on section ID
+   * @param {string} id - Section ID to highlight
+   */
   function setActive(id) {
     navItems.forEach(function (item) {
       item.classList.remove('active');
@@ -35,6 +46,10 @@ window.addEventListener('load', function () {
     });
   }
 
+  /**
+   * Determines which section is currently in view
+   * and updates the active nav item accordingly
+   */
   function onScroll() {
     var scrollY = window.scrollY;
     var windowH = window.innerHeight;
@@ -46,7 +61,7 @@ window.addEventListener('load', function () {
       return;
     }
 
-    // Find which section's top is closest above the middle of the viewport
+    // Find section closest above the middle of the viewport
     var middle = scrollY + windowH * 0.4;
     var current = sections[0];
 
@@ -59,6 +74,7 @@ window.addEventListener('load', function () {
     setActive(current.id);
   }
 
+  // Attach scroll listener and run once on load
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 });

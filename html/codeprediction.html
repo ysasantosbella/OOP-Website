@@ -1,0 +1,172 @@
+<!-- =============================================
+  Code Prediction Quiz Page
+  Purpose: Allow users to read code snippets and 
+  type the expected output for each question.
+============================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta Information -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Prediction</title>
+
+  <!-- Fonts (JetBrains Mono for code, Sora for text) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- Bootstrap core -->
+  <link rel="stylesheet" href="../css/style.css"> <!-- Global styles -->
+  <link rel="stylesheet" href="../css/codeprediction.css"> <!-- Quiz-specific styles -->
+  <link rel="stylesheet" id="darkmode-style" href="../css/darkmode.css" disabled> <!-- Dark mode (toggleable) -->
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logoDark.png">
+</head>
+
+<body>
+
+  <!-- NAVBAR (loaded dynamically via JS) -->
+  <div id="navbar-root"></div>
+
+  <!-- HEADER Section -->
+  <header class="quiz-header">
+    <h1>Code Output Prediction</h1>
+    <p class="lead">Read the code carefully and type the expected output below.</p>
+  </header>
+
+  <!-- QUIZ Section -->
+  <section class="quiz-section">
+
+    <!-- Quiz Form -->
+    <form id="codePredictionForm">
+
+      <!-- Question 1 -->
+      <div class="quiz-card">
+        <h5>1. What will be printed?</h5>
+        <div class="code-block">
+          <pre>class Dog {
+    void bark(){
+        System.out.println("Woof");
+    }
+}
+public class Test{
+    public static void main(String[] args){
+        Dog d = new Dog();
+        d.bark();
+    }
+}</pre>
+        </div>
+        <input type="text" id="p1" class="predict-input" placeholder="Type the output here...">
+      </div>
+
+      <!-- Question 2 -->
+      <div class="quiz-card">
+        <h5>2. What will be printed?</h5>
+        <div class="code-block">
+          <pre>class Animal {
+    void speak(){
+        System.out.println("Animal sound");
+    }
+}
+public class Test{
+    public static void main(String[] args){
+        Animal a = new Animal();
+        a.speak();
+    }
+}</pre>
+        </div>
+        <input type="text" id="p2" class="predict-input" placeholder="Type the output here...">
+      </div>
+
+      <!-- Question 3 -->
+      <div class="quiz-card">
+        <h5>3. What will be printed?</h5>
+        <div class="code-block">
+          <pre>class Car {
+    String brand = "Toyota";
+}
+public class Test{
+    public static void main(String[] args){
+        Car c = new Car();
+        System.out.println(c.brand);
+    }
+}</pre>
+        </div>
+        <input type="text" id="p3" class="predict-input" placeholder="Type the output here...">
+      </div>
+
+      <!-- Question 4 -->
+      <div class="quiz-card">
+        <h5>4. What will be printed?</h5>
+        <div class="code-block">
+          <pre>class Counter {
+    int count = 5;
+    void increment(){
+        count++;
+    }
+}
+public class Test{
+    public static void main(String[] args){
+        Counter c = new Counter();
+        c.increment();
+        c.increment();
+        System.out.println(c.count);
+    }
+}</pre>
+        </div>
+        <input type="text" id="p4" class="predict-input" placeholder="Type the output here...">
+      </div>
+
+      <!-- Question 5 -->
+      <div class="quiz-card">
+        <h5>5. What will be printed?</h5>
+        <div class="code-block">
+          <pre>class Greeter {
+    String greet(){
+        return "Hello";
+    }
+}
+public class Test{
+    public static void main(String[] args){
+        Greeter g = new Greeter();
+        System.out.println(g.greet());
+    }
+}</pre>
+        </div>
+        <input type="text" id="p5" class="predict-input" placeholder="Type the output here...">
+      </div>
+
+      <!-- Submit Button -->
+      <div class="quiz-submit-wrap">
+        <button type="button" class="quiz-submit-btn" onclick="checkPrediction()">Submit</button>
+      </div>
+
+    </form>
+
+    <!-- Result Display -->
+    <div id="result" class="mt-4 text-center"></div>
+
+    <!-- Score Display (hidden until quiz is submitted) -->
+    <div id="scoreDiv" class="score-display" style="display:none;">
+      <div id="scoreText"></div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER (loaded dynamically via JS) -->
+  <div id="footer-root"></div>
+
+  <!-- Scripts -->
+  <script src="../js/bootstrap.bundle.min.js"></script> <!-- Bootstrap JS -->
+  <script src="../js/navbar.js"></script> <!-- Navbar loader -->
+  <script src="../js/main.js"></script> <!-- General scripts -->
+  <script src="../js/codeprediction.js"></script> <!-- Quiz logic -->
+  <script src="../js/darkmode.js"></script> <!-- Dark mode toggle -->
+
+</body>
+</html>
